@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #d9d9d9;
+    color: #372e2e;
+}
+header{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; /* Logo à esquerda, menu centro e botão direita */
+    background: rgba(0, 0, 0, 0.6); /* fundo preto transparente */
+    position: sticky;
+    top: 0;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.nome{
+    width: 150px;
+    height: 100px;
+}
+nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.menu-opcoes{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#menu-header ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+}
+#menu-header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.btn-reserva{
+    padding: 15px 20px;
+    color: #d9d9d9;
+    background: #e42424;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: larger;
+}
+.btn-reserva:hover{
+    color: #d9d9d9;
+    background: #f04242;
+}
+.entrace-conteudo{
+    z-index: 2;
+}
