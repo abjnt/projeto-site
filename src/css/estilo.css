@@ -33,6 +33,7 @@ nav{
 }
 .menu-opcoes{
     background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
 }
 #menu-header ul{
     list-style: none;
@@ -58,11 +59,9 @@ nav{
     cursor: pointer;
     font-weight: bolder;
     font-size: larger;
+    text-transform: uppercase;
 }
 .btn-reserva:hover{
     color: #d9d9d9;
     background: #f04242;
-}
-.entrace-conteudo{
-    z-index: 2;
 }
