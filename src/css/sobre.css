@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #d9d9d9;
+    color: #372e2e;
+}
+.secao-sobre{
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.sobre-conteudo{
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.conteudo-lateral{
+    width: 45%;
+    height: 100vh;
+    padding: 0.3em;
+    background: #9a0303;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0 auto;
+}
