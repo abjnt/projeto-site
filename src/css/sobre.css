@@ -16,10 +16,9 @@ header{
     font-family: 'PT Serif', serif;
     width: 100%;
     background: rgba(0, 0, 0, 0.6); /* fundo preto transparente */
-    position:absolute;
-    z-index: 1;
+    position: absolute;
+    z-index: 10;
     color: #cab8b2;
-    min-height: min-content;
 }
 .top-bar{
     display: flex;
@@ -38,7 +37,6 @@ header{
     width: 180px;
     height: 120px;
     margin-left: 100px;
-    
 }
 nav{
     flex-grow: 1;
@@ -49,7 +47,6 @@ nav{
 .nav-bar{
     padding: 10px;
     display: flex;
-    position: sticky;
 }
 #menu-header ul{
     list-style: none;
