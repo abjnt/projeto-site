@@ -127,18 +127,18 @@ nav{
 .quem-somos{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: auto;
-    align-items: stretch;
+    height: 700px;
+    overflow: hidden;
 }
 
 .descubra{
-    display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px;
+    padding: 60px 50px;
     text-align: center;
-    margin-top: 0;
+    height: 100%;
     
 }
 .descubra h1{
@@ -163,17 +163,81 @@ nav{
 }
 
 .chefeimg{
+   width: 100%; 
+   height: 100%;
 
 
  
 }
 
-   
 
 .chefeimg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    
+}
 
-    display: flex;
+.direnciais{
+    margin-top: 100px;
+    align-items: center;
+    text-align: center
+}
+.texto-diferenciais{
+    font-size: 30px;
+}
+
+.cards{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  
+  
+}
+.cards p {
+    font-size: 25px;
+}
+
+
+.card-carne {
+    background-color: white;
+    height: 160px;
+    width: 190px;
+}
+.card-carne p{
+    font-size: 60px;
+    margin-top: 15px;
+}
+
+.card-vinho{
+    background-color: white;
+    height: 160px;
+    width: 190px;
+}
+.card-vinho p{
+    font-size: 60px;
+    margin-top: 15px;
+}
+.card-chefe{
+    background-color: white;
+    height: 160px;
+    width: 190px;
+}
+.card-chefe p{
+    font-size: 60px;
+    margin-top: 15px;
+}
+
+.card-ambiente{
+    background-color: white;
+    height: 160px;
+    width: 190px;
+}
+.card-ambiente p{
+    font-size: 60px;
+    margin-top: 15px;
 }
