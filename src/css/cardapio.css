@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,7 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-header{
+header {
     font-family: 'PT Serif', serif;
     width: 100%;
     background:rgba(0, 0, 0, 0.6);
@@ -21,40 +20,45 @@ header{
     z-index: 10;
     color: #cab8b2;
 }
-.top-bar{
 
+.top-bar {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-between; 
     margin: -20px 20px;
 }
-.logo{
+
+.logo {
     width: 100px;
     height: 100px;
     cursor: pointer;
 }
-.nome{
+
+.nome {
     width: 180px;
     height: 120px;
     margin-left: 100px;
 }
-nav{
+
+nav {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.nav-bar{
+
+.nav-bar {
     padding: 10px;
     display: flex;
 }
-#menu-header ul{
+
+#menu-header ul {
     list-style: none;
     display: flex;
     gap: 2rem;
-
 }
+
 #menu-header ul li a {
     display: inline-block;
     text-decoration: none;
@@ -65,11 +69,13 @@ nav{
     position: relative;
     transition: transform .2s ease;
 }
-#menu-header a:hover{
+
+#menu-header a:hover {
     transform: scale(1.2);
     color: #96877d;
 }
-.btn-reserva{
+
+.btn-reserva {
     font-family: 'PT Serif', serif;
     padding: 10px 20px;
     color: #ffffff;
@@ -83,33 +89,35 @@ nav{
     position: relative;
     transition: transform .3s ease;
 }
-.btn-reserva:hover{
+
+.btn-reserva:hover {
     color: #d9d9d9;
     background: #9a0303;
     transform: scale(1.05);
 }
 
-/* ESTILIZAÇÃO HERO*/
-
-.hero .img-hero img{
+/* ESTILIZAÇÃO HERO */
+.hero .img-hero img {
     width: 100%;
     height: 480px;
     margin-top: -40px;
     object-fit: cover;
+    filter:brightness(0.6);
 }
 
-.btn-hero{
+.btn-hero {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.btn-hero a{
+
+.btn-hero a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.btn-hero button{
+.btn-hero button {
     font-family: 'PT Serif', serif;
     padding: 10px 20px;
     background: #bc0d0d;
@@ -123,13 +131,13 @@ nav{
     transition: transform .3s ease;
 }
 
-.btn-hero button:hover{
+.btn-hero button:hover {
     color: #d9d9d9;
     background: #9a0303;
     transform: scale(1.05);
 }
 
-.texto-hero{
+.texto-hero {
     color: #ffffff;
     position: absolute;
     top: 30%;
@@ -139,42 +147,42 @@ nav{
     font-family: 'PT Serif', serif;
 }
 
-/* ESTILIZANDO SEÇÃO ESPECIALIDADES*/
-
-.especialidades .txt-especi h1{
+/* ESTILIZANDO SEÇÃO ESPECIALIDADES */
+.especialidades .txt-especi h1 {
     font-family: 'PT Serif', serif;
     color: #000000;
-    margin-left: 60px;
+    margin-left: 215px;
     font-size: 25px;
     text-align: left;
     font-weight: 600;
     margin-top: 30px;
 }
 
-.especi{
+.especi {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-left: 60px;
-    margin-right:60px;
-    margin-top: 30px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.card{
+.card {
     position: relative;
     cursor: pointer;
     transition: transform .3s ease;
 }
 
-.card img{
+.card img {
     width: 100%;
-    height: 180px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
+    display: block;
     border-radius: 6px;
 }
 
 /* TEXTO EM CIMA */
-.card span{
+.card span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -186,14 +194,131 @@ nav{
     text-shadow: 2px 2px 8px rgba(0,0,0,.8);
     z-index: 2;
 }
-.card::after{
+
+.card::after {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,.35);
     border-radius: 6px;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,.4);
+}
+
+/* ==== ESTILOS DA SEÇÃO ESCONDIDA E CARROSSEL ==== */
+
+/* Mãozinha no card clicável */
+.card-clicavel {
+    cursor: pointer;
+}
+
+/* Esconde a seção gigante por padrão */
+.secao-detalhes {
+    display: none; /* A mágica de esconder está aqui */
+    padding: 40px;
+    background-color: #f4ede8; /* Cor de fundo elegante */
+    margin: 20px auto;
+    max-width: 1200px; /* Mantém alinhado com o layout de cima */
+    border-radius: 8px;
+}
+
+/* Mostra a seção quando recebe a classe .aberto do JavaScript */
+.secao-detalhes.aberto {
+    display: block; 
+}
+
+/* Estilo do botão de fechar */
+.cabecalho-detalhes {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos 4 botões de fechar */
+.btn-fechar {
+    background: none;
+    border: none;
+    color: #bc0d0d; /* O vermelho do seu tema */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto; /* Empurra o botão todo para a direita */
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+
+.btn-fechar:hover {
+    text-decoration: underline;
+}
+
+/* Layout do Carrossel */
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Esconde TODOS os slides por padrão */
+.slide {
+    display: none; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Mostra APENAS o slide ativo */
+.slide.ativo {
+    display: flex; 
+}
+
+.texto-detalhe {
+    flex: 1; /* Ocupa metade do espaço */
+}
+
+.texto-detalhe h2 {
+    font-family: 'PT Serif', serif;
+    color: #bc0d0d;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.texto-detalhe p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.imagem-detalhe {
+    flex: 1; /* Ocupa a outra metade */
+    text-align: center;
+}
+
+.imagem-detalhe img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.seta {
+    font-size: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #bc0d0d; 
+    transition: transform 0.2s;
+}
+
+.seta:hover {
+    transform: scale(1.2);
+}
+
+.slide img{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
 }

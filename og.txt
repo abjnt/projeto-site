@@ -1,0 +1,297 @@
+html
+
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cardapio.css">
+  <title>Bovinus Grill</title>
+</head>
+
+<body>
+  <header>
+        <div class="top-bar">
+            <a href="/index.html"><img class="logo" width="100" height="100" src="/src/assets/logo.png" alt="logo"></a>
+            <img class="nome" width="150" height="100" src="/src/assets/BOVINUS.png" alt="nome">
+            <button class="btn-reserva" href="#">faça a sua reserva</button>
+        </div>
+        <div class="nav-bar">
+            <nav id="menu-header">
+                <ul>
+                    <li><a href="/index.html">inicio</a></li>
+                    <li><a href="#">cardápio</a></li>
+                    <li><a href="#">avaliação</a></li>
+                    <li><a href="#">reservas</a></li>
+                    <li><a href="/src/pages/sobre.html">nossa história</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>   
+<main>
+    <div class="hero">
+      <div class="img-hero">
+        <img src="../assets/cardarpio_foto_header.jpg"></div>
+      <div class="btn-hero"><button><a href="">RODÍZIO DE CARNES SELECIONADAS R$ 99,00</a></button></div>
+      <div class="texto-hero"><p>Uma nova opção para o seu almoço ou jantar.</p></div>
+    </div>
+    
+    <section class="especialidades">
+      <div class="txt-especi">
+        <h1>DESCUBRA TUDO QUE HÁ DE BOM</h1>
+      </div>
+      <div class="especi">
+
+        <div class="card">
+          <img src="../assets/carne.jpeg">
+          <span>CARNES</span>
+        </div>
+
+        <div class="card">
+          <img src="../assets/frango.jpg">
+          <span>FRANGO,CORDEIRO E PORCO</span>
+        </div>
+
+        <div class="card">
+          <img src="../assets/peixes.jpg">
+          <span>PEIXES</span>
+        </div>
+
+        <div class="card">
+          <img src="../assets/sobremesas.jpg">
+          <span>SOBREMESAS</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="card-clicavel" id="btn-carnes">
+    <img src="sua-imagem-pequena.jpg" alt="Carnes">
+    <h3>Nossas Carnes</h3>
+</div>
+
+<div class="secao-detalhes" id="conteudo-carnes">
+    <div class="texto-detalhe">
+        <h2>Picanha Premium</h2>
+        <p>Aqui vai a descrição maravilhosa da sua carne, explicando os detalhes do corte...</p>
+        <button id="btn-fechar">Fechar</button> </div>
+    <div class="imagem-detalhe">
+        <img src="foto-picanha-grande.jpg" alt="Picanha">
+    </div>
+</div>
+</main> 
+
+  <script src="../js/cardapio.js"></script>
+</body>
+
+</html>
+
+
+css
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+header{
+    font-family: 'PT Serif', serif;
+    width: 100%;
+    background:rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 10;
+    color: #cab8b2;
+}
+.top-bar{
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; 
+    margin: -20px 20px;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.nome{
+    width: 180px;
+    height: 120px;
+    margin-left: 100px;
+}
+nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar{
+    padding: 10px;
+    display: flex;
+}
+#menu-header ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+}
+#menu-header ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #cab8b2;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform .2s ease;
+}
+#menu-header a:hover{
+    transform: scale(1.2);
+    color: #96877d;
+}
+.btn-reserva{
+    font-family: 'PT Serif', serif;
+    padding: 10px 20px;
+    color: #ffffff;
+    background: #bc0d0d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: larger;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform .3s ease;
+}
+.btn-reserva:hover{
+    color: #d9d9d9;
+    background: #9a0303;
+    transform: scale(1.05);
+}
+
+/* ESTILIZAÇÃO HERO*/
+
+.hero .img-hero img{
+    width: 100%;
+    height: 480px;
+    margin-top: -40px;
+    object-fit: cover;
+    filter:brightness(0.6);
+}
+
+.btn-hero{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn-hero a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-hero button{
+    font-family: 'PT Serif', serif;
+    padding: 10px 20px;
+    background: #bc0d0d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: larger;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform .3s ease;
+}
+
+.btn-hero button:hover{
+    color: #d9d9d9;
+    background: #9a0303;
+    transform: scale(1.05);
+}
+
+.texto-hero{
+    color: #ffffff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-family: 'PT Serif', serif;
+}
+
+/* ESTILIZANDO SEÇÃO ESPECIALIDADES*/
+
+.especialidades .txt-especi h1{
+    font-family: 'PT Serif', serif;
+    color: #000000;
+    margin-left: 215px;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.especi{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card{
+    position: relative;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.card img{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* TEXTO EM CIMA */
+.card span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0,0,0,.8);
+    z-index: 2;
+}
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    border-radius: 6px;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.4);
+}

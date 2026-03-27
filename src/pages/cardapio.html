@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt_br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,56 +9,57 @@
   <link rel="stylesheet" href="../css/cardapio.css">
   <title>Bovinus Grill</title>
 </head>
-
 <body>
   <header>
-        <div class="top-bar">
-            <a href="/index.html"><img class="logo" width="100" height="100" src="/src/assets/logo.png" alt="logo"></a>
-            <img class="nome" width="150" height="100" src="/src/assets/BOVINUS.png" alt="nome">
-            <button class="btn-reserva" href="#">faça a sua reserva</button>
-        </div>
-        <div class="nav-bar">
-            <nav id="menu-header">
-                <ul>
-                    <li><a href="/index.html">inicio</a></li>
-                    <li><a href="#">cardápio</a></li>
-                    <li><a href="#">avaliação</a></li>
-                    <li><a href="#">reservas</a></li>
-                    <li><a href="/src/pages/sobre.html">nossa história</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>   
-<main>
+    <div class="top-bar">
+        <a href="/index.html"><img class="logo" width="100" height="100" src="/src/assets/logo.png" alt="logo"></a>
+        <img class="nome" width="150" height="100" src="/src/assets/BOVINUS.png" alt="nome">
+        <button class="btn-reserva" href="#">faça a sua reserva</button>
+    </div>
+    <div class="nav-bar">
+        <nav id="menu-header">
+            <ul>
+                <li><a href="/index.html">inicio</a></li>
+                <li><a href="#">cardápio</a></li>
+                <li><a href="#">avaliação</a></li>
+                <li><a href="#">reservas</a></li>
+                <li><a href="/src/pages/sobre.html">nossa história</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>   
+
+  <main>
     <div class="hero">
       <div class="img-hero">
-        <img src="../assets/cardarpio_foto_header.jpg"></div>
+        <img src="../assets/cardarpio_foto_header.jpg">
+      </div>
       <div class="btn-hero"><button><a href="">RODÍZIO DE CARNES SELECIONADAS R$ 99,00</a></button></div>
       <div class="texto-hero"><p>Uma nova opção para o seu almoço ou jantar.</p></div>
     </div>
     
-    <section class="especialidades">
+<section class="especialidades">
       <div class="txt-especi">
         <h1>DESCUBRA TUDO QUE HÁ DE BOM</h1>
       </div>
       <div class="especi">
 
-        <div class="card">
+        <div class="card card-clicavel" id="btn-carnes">
           <img src="../assets/carne.jpeg">
           <span>CARNES</span>
         </div>
 
-        <div class="card">
+        <div class="card card-clicavel" id="btn-frango">
           <img src="../assets/frango.jpg">
-          <span>FRANGO,CORDEIRO E PORCO</span>
+          <span>FRANGO, CORDEIRO E PORCO</span>
         </div>
 
-        <div class="card">
+        <div class="card card-clicavel" id="btn-peixes">
           <img src="../assets/peixes.jpg">
           <span>PEIXES</span>
         </div>
 
-        <div class="card">
+        <div class="card card-clicavel" id="btn-sobremesas">
           <img src="../assets/sobremesas.jpg">
           <span>SOBREMESAS</span>
         </div>
@@ -67,9 +67,113 @@
       </div>
     </section>
 
-</main> 
+    <div class="secao-detalhes" id="conteudo-carnes">
+      <button class="btn-fechar" id="fechar-carnes">X Fechar</button>
 
-  <script src="/src/js/cardapio.js"></script>
+      <div class="carrossel-container">
+          <button class="seta" id="esq-carnes">❮</button>
+
+          <div class="slide ativo">
+              <div class="texto-detalhe">
+                  <h2>Picanha Premium</h2>
+                  <p>A estrela da casa, com aquela capa de gordura perfeita.</p>
+              </div>
+              <img src="../assets/picanha.jpg" alt="Picanha">
+          </div>
+
+          <div class="slide">
+              <div class="texto-detalhe">
+                  <h2>Alcatra</h2>
+                  <p>Corte super macio e suculento, desmancha na boca.</p>
+              </div>
+              <img src="../assets/alcatra.jpg" alt="Alcatra">
+          </div>
+
+          <button class="seta" id="dir-carnes">❯</button>
+      </div>
+    </div>
+
+    <div class="secao-detalhes" id="conteudo-frango">
+      <button class="btn-fechar" id="fechar-frango">X Fechar</button>
+
+      <div class="carrossel-container">
+          <button class="seta" id="esq-frango">❮</button>
+
+          <div class="slide ativo">
+              <div class="texto-detalhe">
+                  <h2>Coxa Crocante</h2>
+                  <p>Temperada com ervas finas e assada na brasa.</p>
+              </div>
+              <img src="../assets/coxa.jpg" alt="Coxa">
+          </div>
+
+          <div class="slide">
+              <div class="texto-detalhe">
+                  <h2>Costelinha BBQ</h2>
+                  <p>Carne de porco que solta do osso, com molho barbecue.</p>
+              </div>
+              <img src="../assets/cost_bbq.jpg" alt="Costelinha">
+          </div>
+
+          <button class="seta" id="dir-frango">❯</button>
+      </div>
+    </div>
+
+    <div class="secao-detalhes" id="conteudo-peixes">
+      <button class="btn-fechar" id="fechar-peixes">X Fechar</button>
+
+      <div class="carrossel-container">
+          <button class="seta" id="esq-peixes">❮</button>
+
+          <div class="slide ativo">
+              <div class="texto-detalhe">
+                  <h2>Salmão Grelhado</h2>
+                  <p>Posta de salmão fresco com molho de maracujá.</p>
+              </div>
+              <img src="../assets/salmao.jpg" alt="Salmao">
+          </div>
+
+          <div class="slide">
+              <div class="texto-detalhe">
+                  <h2>Bacalhau à Portuguesa</h2>
+                  <p>O clássico com azeite, batatas e azeitonas.</p>
+              </div>
+              <img src="../assets/bacalhau.jpg" alt="Bacalhau">
+          </div>
+
+          <button class="seta" id="dir-peixes">❯</button>
+      </div>
+    </div>
+
+    <div class="secao-detalhes" id="conteudo-sobremesas">
+      <button class="btn-fechar" id="fechar-sobremesas">X Fechar</button>
+
+      <div class="carrossel-container">
+          <button class="seta" id="esq-sobremesas">❮</button>
+
+          <div class="slide ativo">
+              <div class="texto-detalhe">
+                  <h2>Petit Gateau</h2>
+                  <p>Bolo quente de chocolate com sorvete de creme.</p>
+              </div>
+              <img src="../assets/petit_gateau.jpg" alt="Petit Gateau" width="400" height="300">
+          </div>
+
+          <div class="slide">
+              <div class="texto-detalhe">
+                  <h2>Torta de Limão</h2>
+                  <p>Massa crocante com recheio cremoso.</p>
+              </div>
+              <img src="../assets/torta_limao.jpg" alt="Torta Limao" x>
+          </div>
+
+          <button class="seta" id="dir-sobremesas">❯</button>
+      </div>
+    </div>
+    </section>
+
+  </main> 
+
+  <script src="../js/cardapio.js"></script>
 </body>
-
 </html>
