@@ -4,20 +4,23 @@ const bar = document.querySelector(".scroll-bar");
 
 let isDragging = false;
 
-/* atualiza posição da barra */
 function updateBar() {
-    const maxScroll = container.scrollWidth - container.clientWidth;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+
+    const maxScroll = scrollWidth - clientWidth;
+
+    if (maxScroll <= 0) return;
+
+    const widthPercent = (clientWidth / scrollWidth) * 100;
+    progress.style.width = widthPercent + "%";
+
     const percent = container.scrollLeft / maxScroll;
-
-    const barWidth = bar.clientWidth;
-    const progressWidth = progress.clientWidth;
-
-    const maxMove = barWidth - progressWidth;
+    const maxMove = bar.clientWidth - progress.clientWidth;
 
     progress.style.left = percent * maxMove + "px";
 }
 
-/* arrastar barra */
 progress.addEventListener("mousedown", () => {
     isDragging = true;
 });
@@ -29,11 +32,10 @@ document.addEventListener("mouseup", () => {
 document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
 
-    const barRect = bar.getBoundingClientRect();
-    let x = e.clientX - barRect.left;
+    const rect = bar.getBoundingClientRect();
+    let x = e.clientX - rect.left;
 
-    const progressWidth = progress.clientWidth;
-    const maxMove = bar.clientWidth - progressWidth;
+    const maxMove = bar.clientWidth - progress.clientWidth;
 
     x = Math.max(0, Math.min(x, maxMove));
 
@@ -42,9 +44,14 @@ document.addEventListener("mousemove", (e) => {
     container.scrollLeft = percent * (container.scrollWidth - container.clientWidth);
 });
 
-/* sincroniza quando rolar */
+bar.addEventListener("click", (e) => {
+    const rect = bar.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+
+    container.scrollLeft = percent * (container.scrollWidth - container.clientWidth);
+});
+
 container.addEventListener("scroll", updateBar);
 window.addEventListener("resize", updateBar);
 
-/* inicia */
 updateBar();
