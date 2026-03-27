@@ -134,7 +134,7 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.btn-hero a {
+a {
     text-decoration: none;
     color: #ffffff;
 }
