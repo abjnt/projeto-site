@@ -1,7 +1,13 @@
-// ==========================================
-// FUNÇÃO NOVA: FECHAR TODAS AS SEÇÕES
-// ==========================================
-// Essa função procura todo mundo que tem a classe 'secao-detalhes' e tira o 'aberto'
+
+const menuToggle = document.getElementById('menu-toggle');
+const navBar = document.getElementById('nav-bar');
+
+menuToggle.addEventListener('click', function() {
+    // Liga/desliga a classe ativo que criamos no CSS
+    menuToggle.classList.toggle('ativo');
+    navBar.classList.toggle('ativo');
+});
+
 function fecharTodasAsSecoes() {
     const todasAsSecoes = document.querySelectorAll('.secao-detalhes');
     todasAsSecoes.forEach(secao => {
@@ -128,3 +134,4 @@ function mostrarSlideSobremesas(index) {
 
 setaDirSobremesas.addEventListener('click', function() { mostrarSlideSobremesas(slideAtualSobremesas + 1); });
 setaEsqSobremesas.addEventListener('click', function() { mostrarSlideSobremesas(slideAtualSobremesas - 1); });
+

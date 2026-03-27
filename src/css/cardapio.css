@@ -113,7 +113,12 @@ header {
     box-shadow: 0 8px 25px rgba(154, 3, 3, 0.5);
 }
 
-/* ESTILIZAÇÃO HERO */
+
+.hero {
+    position: relative; 
+    width: 100%;
+}
+
 .hero .img-hero img {
     width: 100%;
     height: 480px;
@@ -164,7 +169,7 @@ header {
     font-family: 'PT Serif', serif;
 }
 
-/* ESTILIZANDO SEÇÃO ESPECIALIDADES */
+
 .especialidades .txt-especi h1 {
     font-family: 'PT Serif', serif;
     color: #000000;
@@ -225,44 +230,43 @@ header {
     box-shadow: 0 15px 30px rgba(0,0,0,.4);
 }
 
-/* ==== ESTILOS DA SEÇÃO ESCONDIDA E CARROSSEL ==== */
 
-/* Mãozinha no card clicável */
+
+
 .card-clicavel {
     cursor: pointer;
 }
 
-/* Esconde a seção gigante por padrão */
 .secao-detalhes {
-    display: none; /* A mágica de esconder está aqui */
+    display: none; 
     padding: 40px;
-    background-color: #f4ede8; /* Cor de fundo elegante */
+    background-color: #f4ede8; 
     margin: 20px auto;
-    max-width: 1200px; /* Mantém alinhado com o layout de cima */
+    max-width: 1200px; 
     border-radius: 8px;
 }
 
-/* Mostra a seção quando recebe a classe .aberto do JavaScript */
+
 .secao-detalhes.aberto {
     display: block; 
 }
 
-/* Estilo do botão de fechar */
+
 .cabecalho-detalhes {
     text-align: right;
     margin-bottom: 20px;
 }
 
-/* Estilo dos 4 botões de fechar */
+
 .btn-fechar {
     background: none;
     border: none;
-    color: #bc0d0d; /* O vermelho do seu tema */
+    color: #bc0d0d; 
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
     display: block;
-    margin-left: auto; /* Empurra o botão todo para a direita */
+    margin-left: auto; 
     margin-bottom: 20px;
     padding: 5px 10px;
 }
@@ -271,7 +275,7 @@ header {
     text-decoration: underline;
 }
 
-/* Layout do Carrossel */
+
 .carrossel-container {
     display: flex;
     align-items: center;
@@ -279,7 +283,7 @@ header {
     gap: 20px;
 }
 
-/* Esconde TODOS os slides por padrão */
+
 .slide {
     display: none; 
     align-items: center;
@@ -288,13 +292,12 @@ header {
     width: 100%;
 }
 
-/* Mostra APENAS o slide ativo */
 .slide.ativo {
     display: flex; 
 }
 
 .texto-detalhe {
-    flex: 1; /* Ocupa metade do espaço */
+    flex: 1; 
 }
 
 .texto-detalhe h2 {
@@ -311,7 +314,7 @@ header {
 }
 
 .imagem-detalhe {
-    flex: 1; /* Ocupa a outra metade */
+    flex: 1; 
     text-align: center;
 }
 
@@ -338,4 +341,148 @@ header {
     width: 500px;
     height: 300px;
     object-fit: cover;
+}
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    order: 5; 
+    z-index: 1001; 
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #e6d5c3;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+@media (max-width: 768px) {
+
+    header {
+        position: fixed; 
+        flex-wrap: wrap; 
+        padding: 15px 20px;
+        height: auto;
+    }
+
+    .top-bar .nome {
+        margin-left: 0;
+        height: 30px;
+    }
+
+    .top-bar .btn-reserva {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    .nav-bar {
+        display: none; 
+        width: 100%;
+        order: 6; 
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+
+    .nav-bar.ativo {
+        display: flex;
+        animation: descerMenu 0.3s ease;
+    }
+
+    #menu-header ul {
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .menu-toggle.ativo span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.ativo span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .hero .img-hero img {
+        height: 350px; 
+        margin-top: 0;
+    }
+
+    .texto-hero {
+        font-size: 22px;
+        width: 90%;
+        text-align: center;
+        top: 50%;
+    }
+
+    .btn-hero {
+        top: 80%;
+        width: 90%;
+        text-align: center;
+    }
+
+    .btn-hero button {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .especialidades .txt-especi h1 {
+        margin-left: 0; 
+        text-align: center;
+        font-size: 22px;
+        padding: 0 15px;
+    }
+
+    .especi {
+        grid-template-columns: 1fr; 
+        margin: 20px 15px;
+    }
+
+
+    .secao-detalhes {
+        margin: 10px 15px;
+        padding: 20px;
+    }
+
+    .slide {
+        flex-direction: column-reverse; 
+        gap: 20px;
+    }
+
+    .texto-detalhe {
+        text-align: center;
+    }
+
+    .texto-detalhe h2 {
+        font-size: 24px;
+    }
+
+    .texto-detalhe p {
+        font-size: 16px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+    }
+
+    .seta {
+        font-size: 30px;
+    }
 }
