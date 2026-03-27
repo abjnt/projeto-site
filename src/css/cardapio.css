@@ -1,99 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
+
 
 body {
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    color: #e6d5c3;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
-
 header {
-    font-family: 'PT Serif', serif;
+    position: fixed;
+    top: 0;
     width: 100%;
-    background:rgba(0, 0, 0, 0.6);
-    position: absolute;
-    z-index: 10;
-    color: #cab8b2;
+    height: 90px;
+    background: rgba(18, 12, 10, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .top-bar {
+    display: contents;
+}
+
+.top-bar a {
+    order: 1;
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: space-between; 
-    margin: -20px 20px;
+    justify-content: space-between;
+    /* Logo à esquerda, menu centro e botão direita */
+    top: 0;
+    margin: 0 20px;
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
+    transition: transform 0.4s ease;
+    object-fit: contain;
 }
 
-.nome {
-    width: 180px;
-    height: 120px;
-    margin-left: 100px;
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.top-bar .nome {
+    order: 2;
+    height: 40px;
+    width: auto;
+    margin-left: 15px;
+    object-fit: contain;
 }
 
 .nav-bar {
-    padding: 10px;
+    order: 3;
     display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 #menu-header ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 3vw;
 }
 
 #menu-header ul li a {
     display: inline-block;
     text-decoration: none;
-    color: #cab8b2;
-    font-weight: 600;
-    font-size: 1.3rem;
+    color: #c8b4a2;
+    font-weight: 500;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    position: relative;
-    transition: transform .2s ease;
+    transition: color 0.3s ease;
 }
 
-#menu-header a:hover {
-    transform: scale(1.2);
-    color: #96877d;
+#menu-header ul li a:hover {
+    color: #fff;
 }
 
-.btn-reserva {
-    font-family: 'PT Serif', serif;
-    padding: 10px 20px;
-    color: #ffffff;
-    background: #bc0d0d;
+.top-bar .btn-reserva {
+    order: 4;
+    padding: 12px 28px;
+    color: #fff;
+    background: linear-gradient(135deg, #d32f2f, #9a0303);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bolder;
-    font-size: larger;
+    font-weight: 600;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    position: relative;
-    transition: transform .3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
 }
 
-.btn-reserva:hover {
-    color: #d9d9d9;
-    background: #9a0303;
-    transform: scale(1.05);
+.top-bar .btn-reserva:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(154, 3, 3, 0.5);
 }
 
 /* ESTILIZAÇÃO HERO */
