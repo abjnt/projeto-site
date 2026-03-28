@@ -135,3 +135,32 @@ function mostrarSlideSobremesas(index) {
 setaDirSobremesas.addEventListener('click', function() { mostrarSlideSobremesas(slideAtualSobremesas + 1); });
 setaEsqSobremesas.addEventListener('click', function() { mostrarSlideSobremesas(slideAtualSobremesas - 1); });
 
+
+// ==========================================
+// POP-UP (MODAL) DO RODÍZIO
+// ==========================================
+const btnRodizio = document.getElementById('btn-rodizio');
+const modalRodizio = document.getElementById('modal-rodizio');
+const fecharModalRodizio = document.getElementById('fechar-modal-rodizio');
+
+// Só roda se o botão existir nessa página
+if (btnRodizio && modalRodizio) {
+    
+    // 1. Abrir o Pop-up ao clicar no botão vermelho
+    btnRodizio.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita a tela pular
+        modalRodizio.classList.add('ativo');
+    });
+
+    // 2. Fechar o Pop-up ao clicar no "X"
+    fecharModalRodizio.addEventListener('click', function() {
+        modalRodizio.classList.remove('ativo');
+    });
+
+    // 3. Fechar o Pop-up se o usuário clicar fora da caixa branca (no fundo escuro)
+    modalRodizio.addEventListener('click', function(evento) {
+        if (evento.target === modalRodizio) {
+            modalRodizio.classList.remove('ativo');
+        }
+    });
+}

@@ -229,9 +229,6 @@ a {
     box-shadow: 0 15px 30px rgba(0,0,0,.4);
 }
 
-
-
-
 .card-clicavel {
     cursor: pointer;
 }
@@ -357,6 +354,99 @@ a {
     background-color: #e6d5c3;
     transition: all 0.3s ease;
     border-radius: 2px;
+}
+
+/* ========================================== */
+/* POP-UP DO RODÍZIO (MODAL)                  */
+/* ========================================== */
+
+/* Fundo escuro que cobre a tela toda */
+.modal-overlay {
+    display: none; /* Começa invisível! */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto transparente */
+    z-index: 2000; /* Fica acima de TUDO na tela */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Quando o JS colocar a classe 'ativo', ele aparece */
+.modal-overlay.ativo {
+    display: flex;
+    opacity: 1;
+}
+
+/* A caixinha branca com o texto */
+.modal-content {
+    background: #f4ede8; /* Mesma cor de fundo dos detalhes das carnes */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: left;
+    transform: translateY(-20px); /* Começa um pouco pra cima */
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+/* Efeito de descida suave quando aparece */
+.modal-overlay.ativo .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h2 {
+    color: #bc0d0d;
+    font-family: 'PT Serif', serif;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* O "X" para fechar */
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #bc0d0d;
+    cursor: pointer;
+}
+
+/* Botão de reserva dentro do popup */
+.btn-reserva-modal {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background: #bc0d0d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-reserva-modal:hover {
+    background: #9a0303;
 }
 @media (max-width: 768px) {
 
