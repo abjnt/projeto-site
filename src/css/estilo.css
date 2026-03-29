@@ -130,40 +130,33 @@ header {
 
 }   
 
-.btn-reserva {
+.btn-reserva{
     font-family: 'PT Serif', serif;
     padding: 10px 20px;
-    background: #bc0d0d;
     color: #d9d9d9;
+    background: #bc0d0d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
     font-weight: bolder;
     font-size: larger;
     text-transform: uppercase;
     position: relative;
     transition: transform .3s ease;
 }
-
-.btn-reserva:hover {
+.btn-reserva:hover{
     color: #d9d9d9;
     background: #9a0303;
     transform: scale(1.05);
 }
-.btn-reserva a{
-    text-decoration: none;
-    color: #fff;
-}
-.page-entrace {
+.page-entrace{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     min-height: 100vh;
 }
-
-.entrace-conteudo {
+.entrace-conteudo{
     font-family: 'PT Serif', serif;
     position: relative;
     display: block;
@@ -172,8 +165,7 @@ header {
     font-size: 1.1rem;
     top: 180px;
 }
-
-.entrace-conteudo h2 {
+.entrace-conteudo h2{
 
     text-transform: uppercase;
     font-size: 3rem;
@@ -184,14 +176,14 @@ header {
 
 
 
-.quem-somos {
+.quem-somos{
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 700px;
     overflow: hidden;
 }
 
-.descubra {
+.descubra{
 
     flex-direction: column;
     justify-content: center;
@@ -199,10 +191,9 @@ header {
     padding: 60px 50px;
     text-align: center;
     height: 100%;
-
+    
 }
-
-.descubra h1 {
+.descubra h1{
     font-family: 'Times New Roman', serif;
     font-size: 60px;
     line-height: 1;
@@ -219,45 +210,46 @@ header {
     margin-bottom: 30px;
 }
 
+.btn-reserva {
+    margin-top: 35px;
+}
 
-.chefeimg {
-    width: 100%;
-    height: 100%;
+.chefeimg{
+   width: 100%; 
+   height: 100%;
 
 
-
+ 
 }
 
 
-.chefeimg img {
+.chefeimg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-
+    
 }
 
-.direnciais {
+.direnciais{
     margin-top: 100px;
     align-items: center;
     text-align: center
 }
-
-.texto-diferenciais {
+.texto-diferenciais{
     font-size: 30px;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-
-
+.cards{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  
+  
 }
-
 .cards p {
     font-size: 25px;
 }
@@ -268,84 +260,77 @@ header {
     height: 160px;
     width: 190px;
 }
-
-.card-carne p {
+.card-carne p{
     font-size: 60px;
     margin-top: 15px;
 }
 
-.card-vinho {
+.card-vinho{
     background-color: white;
     height: 160px;
     width: 190px;
 }
-
-.card-vinho p {
+.card-vinho p{
     font-size: 60px;
     margin-top: 15px;
 }
-
-.card-chefe {
+.card-chefe{
     background-color: white;
     height: 160px;
     width: 190px;
 }
-
-.card-chefe p {
+.card-chefe p{
     font-size: 60px;
     margin-top: 15px;
 }
 
-.card-ambiente {
+.card-ambiente{
     background-color: white;
     height: 160px;
     width: 190px;
 }
-
-.card-ambiente p {
+.card-ambiente p{
     font-size: 60px;
     margin-top: 15px;
 }
 
-.btn-diferenciais {
+.btn-diferenciais{
     margin-top: 100px;
 }
-
-.texto-venha {
+.texto-venha{
     text-align: center;
     margin-top: 70px;
     font-size: 30px;
 }
-
-.localizacao {
-    display: flex;
+.localizacao{
+    display:flex;
     align-items: flex-start;
     gap: 60px;
     margin-top: 20px;
 
 }
 
-.mapa {
+.mapa{
     padding: 60px 20px;
 }
 
 
-.mapa iframe {
+.mapa iframe{
     border-radius: 12px;
 }
 
-.endereco {
+.endereco{
     margin-top: 60px;
 }
 
-.endereco h2 {
+.endereco h2{
     font-size: 40px;
     line-height: 1.3;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-.endereco p {
+.endereco p{
     font-size: 30px;
     line-height: 1.5;
     margin-bottom: 14px;
