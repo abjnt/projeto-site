@@ -11,10 +11,9 @@ body {
   color: #fff;
 }
 header {
-    position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background: rgba(18, 12, 10, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -26,6 +25,20 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+  main h1{
+    text-align: center;
+    color: #9a0303;
+    margin: 20px;
+    font-size: 40px ;
+  }
+  main h2{
+    text-align: center;
+    font-size: 35px;
+  }
+  main h6{
+    text-align: center;
+    color: #cecccc;
+  }
 .top-bar {
     display: contents;
 }
@@ -169,30 +182,37 @@ header {
 
 .carrossel {
   overflow: hidden;
+  overflow-x: auto;
   width: 100%;
 }
+.carrossel::-webkit-scrollbar{
+  display:none;
+}
+  @keyframes spin{
+    from {translate: 0;}
+    to {translate: -100%}
+  }
 
 .cards {
   display: flex;
-  transition: transform 0.5 ease;
-  will-change:transform ;
+  animation:spin 6.5s infinite linear;
+  padding-right: 1em;
 }
 
 .card {
-  min-width: 100%;
-  flex-shrink: 0;
+  min-width: 50%;
+  margin: 10px;
   background: #fff;
   color: #000;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  min-height: 200px; 
+  min-height: 60px; 
 }
 
 .perfil {
@@ -215,12 +235,4 @@ header {
 .card p {
   margin: 15px 0;
   font-size: 14px;
-}
-
-.btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
 }
