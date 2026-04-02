@@ -121,6 +121,11 @@ header {
     box-shadow: 0 8px 25px rgba(154, 3, 3, 0.5);
 }
 
+.btn-reserva a{
+  text-decoration: none ;
+  color: #fff;
+}
+
 .avaliacoes {
   padding: 60px 20px;
 }
@@ -161,17 +166,6 @@ header {
 }
 
 
-@media (max-width: 768px) {
-  .avaliacoes-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .divisor {
-    width: 80%;
-    height: 1px;
-  }
-}
 .depoimentos {
   max-width: 900px;
   margin: 60px auto;
@@ -235,4 +229,84 @@ header {
 .card p {
   margin: 15px 0;
   font-size: 14px;
+}
+
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    order: 5; 
+    z-index: 1001; 
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #e6d5c3;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .avaliacoes-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .divisor {
+    width: 80%;
+    height: 1px;
+  }
+
+  header {
+    position: fixed; 
+    flex-wrap: wrap; 
+    padding: 15px 20px;
+    height: auto;
+    }
+
+  .top-bar .nome {
+    margin-left: 0;
+    height: 30px;
+  }
+  .top-bar .btn-reserva {
+    display: none; 
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-bar {
+    display: none; 
+    width: 100%;
+    order: 6; 
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .nav-bar.ativo {
+    display: flex;
+    animation: descerMenu 0.3s ease;
+  }
+  #menu-header ul {
+    flex-direction: column; 
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+  }
+  .menu-toggle.ativo span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.ativo span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 }

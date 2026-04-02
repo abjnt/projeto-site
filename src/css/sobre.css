@@ -10,7 +10,7 @@
 body {
     background-color: #120c0a;
     color: #e6d5c3;
-    min-height: 100vh;
+    height: 800vh;
     overflow-x: hidden;
 }
 header {
@@ -91,6 +91,10 @@ header {
     color: #fff;
 }
 
+#btn-hamburguer{
+    display: none;
+}
+
 .top-bar .btn-reserva {
     order: 4;
     padding: 12px 28px;
@@ -114,77 +118,53 @@ header {
   text-decoration: none ;
   color: #fff;
 }
-/* ESTILIZAÇÃO HERO */
-.hero .img-hero img {
-    width: 100%;
-    height: 480px;
-    margin-top: -40px;
-    object-fit: cover;
-    filter:brightness(0.6);
+
+/* Remove lógica antiga */
+.wrapper {
+  width: 100%;
 }
 
-.btn-hero {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.btn-hero a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.btn-hero button {
-    font-family: 'PT Serif', serif;
-    padding: 10px 20px;
-    background: #bc0d0d;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bolder;
-    font-size: larger;
-    text-transform: uppercase;
-    position: relative;
-    transition: transform .3s ease;
-}
-
-.btn-hero button:hover {
-    color: #d9d9d9;
-    background: #9a0303;
-    transform: scale(1.05);
-}
-
-.texto-hero {
-    color: #ffffff;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-family: 'PT Serif', serif;
-}
-
+/* Slides viram camadas fixas */
 .step {
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  scroll-snap-align: start;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+
   opacity: 0;
-  transition: 0.5s ease;
-  object-fit: cover;
-  z-index: 0;
+  transform: translateY(100%);
+  transition: transform 0.8s ease, opacity 0.6s ease;
 }
 
-.step.active {
+/* Slide vindo de baixo (scroll descendo) */
+.step.next {
+  transform: translateY(100%);
   opacity: 1;
+  z-index: 3;
+}
+
+/* Slide já passado (fica atrás) */
+.step.prev {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Slide atual */
+.step.active {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
 }
 
 #s1{
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Timeline */
@@ -290,14 +270,14 @@ header {
   justify-content: center;
   align-items: center;  
   font-family: 'PT Serif', serif; 
-  font-size: 20px;
+  font-size: 1.5rem;
   z-index: 0;
   text-align: center;
 }
 
 .in-circle{
-  width: 80%;
-  height: 80%;
+  width: 85%;
+  height: 85%;
   border-radius: 100%;
   background-color: rgb(224, 211, 206);
   z-index: 2;
@@ -312,8 +292,189 @@ header {
   bottom: 30px;
   text-align: center;
   font-family: 'PT Serif', serif;
-  font-size: 25px;
+  font-size: 1.7rem;
   font-weight: 500;
   color: #b8a69b;
   margin: 0 8vw;
+}
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    order: 5; 
+    z-index: 1001; 
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #e6d5c3;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+@media (max-width:1024px) {
+    /* ======= HEADER ========= */
+    header {
+        position: fixed; 
+        flex-wrap: wrap; 
+        padding: 15px 20px;
+        padding-right: 40px;
+        height: auto;
+    }
+
+    .top-bar .nome {
+        order: 2;
+        height: 60px;
+        width: auto;
+        padding-right: 80px;
+    }
+
+    .top-bar .btn-reserva {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    #btn-hamburguer{
+        display: flex;
+        padding: 12px 28px;
+        color: #fff;
+        background: linear-gradient(135deg, #d32f2f, #9a0303);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
+    }
+
+    .nav-bar {
+        display: none; 
+        width: 100%;
+        order: 6; 
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .nav-bar.ativo {
+        display: flex;
+        animation: descerMenu 0.3s ease;
+    }
+
+    #menu-header ul {
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .menu-toggle.ativo span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.ativo span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== DATAS ========== */
+
+    .date-time{
+        width: 18%;
+        height: 24%;
+        font-size: 1.2rem;
+    }
+    .text{
+        font-size: 1.4rem;
+    }
+
+    .circle {
+        width: 12px;
+        height: 12px;
+    }
+
+    .circle.active {
+        transform: scale(1.1);
+        font-size: .9rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    /* ======== DATAS ========== */
+
+    .date-time{
+        width: 18%;
+        height: 24%;
+        font-size: 1.1rem;
+    }
+    .text{
+        font-size: 1.3rem;
+    }
+
+    /* ========== CIRCULOS =========== */
+
+    .line {
+        width: 2px;
+    }
+
+/* Bolinhas */
+    .circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .circle.active {
+        transform: scale(1);
+        font-size: .7rem;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    /* ======= HEADER ========= */
+
+    .top-bar .nome {
+        height: 50px;
+        padding-right: 70px;
+    }
+
+    .top-bar .logo{
+        width: 50px;
+    }
+    /* ======== DATAS ========== */
+
+    .date-time{
+        width: 24%;
+        height: 22%;
+        font-size: .9rem;
+    }
+    .text{
+        font-size: 1.1rem;
+    }
+
+    .circle {
+        width: 9px;
+        height: 9px;
+    }
+
+    .circle.active {
+        transform: scale(.8);
+        font-size: .6rem;
+    }
 }

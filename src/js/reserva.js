@@ -55,3 +55,12 @@ container.addEventListener("scroll", updateBar);
 window.addEventListener("resize", updateBar);
 
 updateBar();
+
+const menuToggle = document.getElementById('menu-toggle');
+const navBar = document.getElementById('nav-bar');
+
+menuToggle.addEventListener('click', function() {
+    // Liga/desliga a classe ativo que criamos no CSS
+    menuToggle.classList.toggle('active');
+    navBar.classList.toggle('active');
+});
