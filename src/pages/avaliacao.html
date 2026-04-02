@@ -1,111 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/avaliacao.css">
-    <title>Avaliações</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/css/avaliacao.css">
+  <title>Avaliações</title>
 </head>
+
 <body>
-    <header>
-         <div class="top-bar">
-            <a href="./index.html"><img class="logo" width="100" height="100" src="../assets/logo.png" alt="logo"></a>
-            <img class="nome" width="150" height="100" src="../assets/BOVINUS.png" alt="nome">
-            <button class="btn-reserva"><a href="./reserva.html">faça a sua reserva</a></button>
-        </div>
-        <div class="nav-bar" id="nav-bar">
-            <nav id="menu-header">
-                <ul>
-                    <li><a href="./index.html">inicio</a></li>
-                    <li><a href="./cardapio.html">cardápio</a></li>
-                    <li><a href="#">avaliação</a></li>
-                    <li><a href="./reserva.html">reservas</a></li>
-                    <li><a href="./sobre.html">nossa história</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+  <header>
+    <div class="top-bar">
+      <a href="./index.html"><img class="logo" width="100" height="100" src="../assets/logo.png" alt="logo"></a>
+      <img class="nome" width="150" height="100" src="../assets/BOVINUS.png" alt="nome">
+      <button class="btn-reserva"><a href="./reserva.html">faça a sua reserva</a></button>
+    </div>
+    <div class="nav-bar" id="nav-bar">
+      <nav id="menu-header">
+        <ul>
+          <li><a href="./index.html">inicio</a></li>
+          <li><a href="./cardapio.html">cardápio</a></li>
+          <li><a href="#">avaliação</a></li>
+          <li><a href="./reserva.html">reservas</a></li>
+          <li><a href="./sobre.html">nossa história</a></li>
+          <li><button id="btn-hamburguer"><a href="./reserva.html">faça a sua reserva</a></button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    </header>
+  </header>
 
-    <main>
+  <main>
     <h1> A experiência de quem já viveu </h1>
     <h2>Avaliações dos nossos clientes</h2>
-    <h6>Cada visita é marcada por sabor, tradição e um atendimento que transforma o churrasco em uma experiência memorável.</h6>
-     <br>
-     <br>
-    <section class = "avaliacao-container">
-     <div class = "item">
-        <h2>4.9</h2>
-        <div class = "estrelas">⭐⭐⭐⭐⭐</div>
-        <p>Avaliações gerais</p>
-     </div>
-     <div class = "divisor"></div>
+    <h6>Cada visita é marcada por sabor, tradição e um atendimento que transforma o churrasco em uma experiência
+      memorável.</h6>
+    <br>
+    <br>
+    <section class="avaliacao-container">
 
-     <div class = "item">
+      <div class="item">
+        <h2>4.9</h2>
+        <div class="estrelas">⭐⭐⭐⭐⭐</div>
+        <p>Avaliações gerais</p>
+      </div>
+
+      <div class="divisor"></div>
+
+      <div class="item">
         <h2>98%</h2>
         <p>Clientes satisfeitos</p>
-     </div>
-     <div class = "divisor"></div>
+      </div>
 
-     <div class = "item">
+      <div class="divisor"></div>
+
+      <div class="item">
         <h2>+10 anos</h2>
         <p>Servindo qualidade</p>
-     </div>
-     <div class = "divisor"></div>
+      </div>
 
-     <div class = "item">
+      <div class="divisor"></div>
+
+      <div class="item">
         <h2>Google</h2>
-        <p>avaliações verificadas</p>
-     </div>
-
+        <p>Avaliações verificadas</p>
+      </div>
     </section>
-    </main>
-  <section class="depoimentos">
+  </main>
+  <section class="depoimentos-wrapper">
+    <div class="depoimentos">
+      <div class="carrossel">
+        <div class="cards">
 
-  <div class="carrossel">
-    <div class="cards">
+          <div class="card">
+            <img class="perfil-img" src="/src/assets/perfil.png" alt="img">
+            <h3>Thales Freitas</h3>
+            <span>4 meses atrás</span>
+            <p>Experiência incrível, carne perfeita e atendimento top!</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
 
-      <div class="card">
-        <div class="perfil"></div>
-        <h3>Thales Freitas</h3>
-        <span>4 meses atrás</span>
-        <p>Experiência incrível, carne perfeita e atendimento top!</p>
-        <div class="stars">★★★★★</div>
+          <div class="card">
+            <img class="perfil-img" src="/src/assets/perfil.png" alt="img">
+            <h3>Maria Silva</h3>
+            <span>2 meses atrás</span>
+            <p>Ambiente muito agradável, recomendo para toda família.</p>
+            <div class="stars">⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="card">
+            <img class="perfil-img" src="/src/assets/perfil.png" alt="img">
+            <h3>João Pedro</h3>
+            <span>1 mês atrás</span>
+            <p>Melhor churrascaria da cidade, voltarei com certeza!</p>
+            <div class="stars">⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="card">
+            <img class="perfil-img" src="/src/assets/perfil.png" alt="img">
+            <h3>Paulo Moura</h3>
+            <span>2 meses atrás</span>
+            <p>Nunca vi uma carne de tão boa qualidade!</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+
+        </div>
       </div>
-
-      <div class="card">
-        <div class="perfil"></div>
-        <h3>Maria Silva</h3>
-        <span>2 meses atrás</span>
-        <p>Ambiente muito agradável, recomendo para toda família.</p>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="card">
-        <div class="perfil"></div>
-        <h3>João Pedro</h3>
-        <span>1 mês atrás</span>
-        <p>Melhor churrascaria da cidade, voltarei com certeza!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      
-      <div class="card">
-        <div class="perfil"></div>
-        <h3>Paulo Moura</h3>
-        <span>2 meses atrás</span>
-        <p>Nunca vi uma carne de tão boa qualidade!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-
     </div>
-  </div>
 
-</section>
-<script src="../js/avaliacao.js"></script>
+  </section>
+  <script src="../js/avaliacao.js"></script>
 </body>
+
 </html>

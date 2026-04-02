@@ -1,128 +1,144 @@
 /* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #0a0a0a;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-}
-header {
-    top: 0;
-    width: 100%;
-    height: 100px;
-    background: rgba(18, 12, 10, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+:root {
+  --cor-borda: linear-gradient(90deg, #9a0303, #d32f2f, #ff7a00)
 }
 
-  main h1{
-    text-align: center;
-    color: #9a0303;
-    margin: 20px;
-    font-size: 40px ;
-  }
-  main h2{
-    text-align: center;
-    font-size: 35px;
-  }
-  main h6{
-    text-align: center;
-    color: #cecccc;
-  }
+body {
+  background-color: #1c140f;
+  font-family: 'Poppins', sans-serif;
+  color: #c8b4a2;
+}
+
+header {
+  font-family: Arial, sans-serif;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(18, 12, 10, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+main h1 {
+  text-align: center;
+  color: #9a0303;
+  margin: 20px;
+  font-size: 40px;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 35px;
+}
+
+main h6 {
+  text-align: center;
+  color: #dfcccc;
+}
+
 .top-bar {
-    display: contents;
+  display: contents;
 }
 
 .top-bar a {
-    order: 1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    /* Logo à esquerda, menu centro e botão direita */
-    top: 0;
-    margin: 0 20px;
+  order: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  /* Logo à esquerda, menu centro e botão direita */
+  top: 0;
+  margin: 0 20px;
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.4s ease;
-    object-fit: contain;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  object-fit: contain;
 }
 
 .logo:hover {
-    transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1) rotate(5deg);
 }
 
 .top-bar .nome {
-    order: 2;
-    height: 40px;
-    width: auto;
-    margin-left: 15px;
-    object-fit: contain;
+  order: 2;
+  height: 60px;
+  width: auto;
+  margin-left: 15px;
+  object-fit: contain;
 }
 
 .nav-bar {
-    order: 3;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
+  order: 3;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 #menu-header ul {
-    list-style: none;
-    display: flex;
-    gap: 3vw;
+  list-style: none;
+  display: flex;
+  gap: 3vw;
 }
 
 #menu-header ul li a {
-    display: inline-block;
-    text-decoration: none;
-    color: #c8b4a2;
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  color: #c8b4a2;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
 }
 
 #menu-header ul li a:hover {
-    color: #fff;
+  color: #fff;
+}
+
+#btn-hamburguer {
+  display: none;
 }
 
 .top-bar .btn-reserva {
-    order: 4;
-    padding: 12px 28px;
-    color: #fff;
-    background: linear-gradient(135deg, #d32f2f, #9a0303);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
+  order: 4;
+  padding: 12px 28px;
+  color: #fff;
+  background: linear-gradient(135deg, #d32f2f, #9a0303);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
 }
 
 .top-bar .btn-reserva:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(154, 3, 3, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(154, 3, 3, 0.5);
 }
 
-.btn-reserva a{
-  text-decoration: none ;
+.btn-reserva a {
+  text-decoration: none;
   color: #fff;
 }
 
@@ -139,12 +155,15 @@ header {
   border-radius: 12px;
   max-width: 900px;
   margin: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
 
 .item {
   text-align: center;
   flex: 1;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 
@@ -160,18 +179,32 @@ header {
 
 
 .divisor {
-  width: 1px;
-  height: 60px;
-  background: rgba(255,255,255,0.2);
+  width: 80%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  justify-self: center;
 }
 
 
-.depoimentos {
-  max-width: 900px;
-  margin: 60px auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.depoimentos-wrapper {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 30px 30px;
+  background: #2b1f1f;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.depoimentos-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--cor-borda);
 }
 
 .carrossel {
@@ -179,24 +212,31 @@ header {
   overflow-x: auto;
   width: 100%;
 }
-.carrossel::-webkit-scrollbar{
-  display:none;
+
+.carrossel::-webkit-scrollbar {
+  display: none;
 }
-  @keyframes spin{
-    from {translate: 0;}
-    to {translate: -100%}
+
+@keyframes spin {
+  from {
+    translate: 0;
   }
+
+  to {
+    translate: -100%
+  }
+}
 
 .cards {
   display: flex;
-  animation:spin 6.5s infinite linear;
+  animation: spin 12s infinite linear;
   padding-right: 1em;
 }
 
 .card {
   min-width: 50%;
   margin: 10px;
-  background: #fff;
+  background: #ffffff;
   color: #000;
   padding: 30px;
   border-radius: 15px;
@@ -205,17 +245,16 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  min-height: 60px; 
+  min-height: 60px;
 }
 
-.perfil {
-  width: 50px;
-  height: 50px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 auto 10px;
+
+.perfil-img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
 }
+
 
 .card h3 {
   font-size: 16px;
@@ -233,80 +272,159 @@ header {
 
 
 .menu-toggle {
-    display: none; 
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    order: 5; 
-    z-index: 1001; 
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  order: 5;
+  z-index: 1001;
 }
 
 .menu-toggle span {
-    width: 30px;
-    height: 3px;
-    background-color: #e6d5c3;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+  width: 30px;
+  height: 3px;
+  background-color: #e6d5c3;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
+.avaliacoes-container {
+  flex-direction: column;
+  gap: 20px;
+}
 
-@media (max-width: 768px) {
-  .avaliacoes-container {
-    flex-direction: column;
-    gap: 20px;
-  }
+@media (max-width:1024px) {
 
-  .divisor {
-    width: 80%;
-    height: 1px;
-  }
-
+  /* ======= HEADER ========= */
   header {
-    position: fixed; 
-    flex-wrap: wrap; 
+    position: fixed;
+    flex-wrap: wrap;
     padding: 15px 20px;
+    padding-right: 40px;
     height: auto;
-    }
+  }
 
   .top-bar .nome {
-    margin-left: 0;
-    height: 30px;
+    order: 2;
+    height: 60px;
+    width: auto;
+    padding-right: 80px;
   }
+
   .top-bar .btn-reserva {
-    display: none; 
+    display: none;
   }
+
   .menu-toggle {
     display: flex;
   }
+
+  #btn-hamburguer {
+    display: flex;
+    padding: 12px 28px;
+    color: #fff;
+    background: linear-gradient(135deg, #d32f2f, #9a0303);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
+  }
+
   .nav-bar {
-    display: none; 
+    display: none;
     width: 100%;
-    order: 6; 
+    order: 6;
     padding-top: 20px;
     padding-bottom: 10px;
   }
+
   .nav-bar.ativo {
     display: flex;
     animation: descerMenu 0.3s ease;
   }
+
   #menu-header ul {
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
     text-align: center;
     gap: 20px;
   }
+
   .menu-toggle.ativo span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
+
   .menu-toggle.ativo span:nth-child(2) {
     opacity: 0;
   }
+
   .menu-toggle.ativo span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
 
   @keyframes descerMenu {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ======== CONTAINER ========== */
+
+  .avaliacoes-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ======== CARROSSEL ======== */
+
+  .carrossel {
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* MOSTRAR SCROLL */
+  .carrossel::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+
+  .carrossel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .carrossel::-webkit-scrollbar-thumb {
+    background: var(--cor-borda);
+    border-radius: 10px;
+  }
+
+  .cards {
+    width: max-content;
+    animation: none !important;
+  }
+
+  .card {
+    min-width: 260px;
+  }
+
+  .depoimentos-wrapper {
+    max-width: fit-content;
+    margin: auto 20px;
+  }
+}
+@media (max-width:768px){
+
+  .card {
+    max-width: 300px;
+  }
 }
