@@ -238,10 +238,26 @@ header {
 .direnciais{
     margin-top: 100px;
     align-items: center;
-    text-align: center
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #1c1a1a, #2b2424);
+    padding: 80px 20px;
+    min-height: 90vh;
+    
 }
+
+
 .texto-diferenciais{
-    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #f5f2ef;
+    margin-bottom: 50px;
+}
+texto-diferenciais span{
+    color: #c0392b;
 }
 
 .cards{
@@ -260,46 +276,113 @@ header {
 
 
 .card-carne {
-    background-color: white;
-    height: 160px;
-    width: 190px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    height: 170px;
+    width: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-.card-carne p{
-    font-size: 60px;
-    margin-top: 15px;
+.card-carne:hover {
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
-
+.card-carne i{
+    font-size: 50px;
+    margin-top: 25px;
+    color:#c0392b;
+}
+.card-carne h2{
+    font-size: 22px;
+    font-weight: 600;
+    color: #f1e8e3;
+    margin: 11px;
+}
 .card-vinho{
-    background-color: white;
-    height: 160px;
-    width: 190px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    height: 170px;
+    width: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-.card-vinho p{
-    font-size: 60px;
-    margin-top: 15px;
+.card-vinho:hover {
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.card-vinho i{
+    font-size: 50px;
+    margin-top: 25px;
+    color: #c74832;
+    
+}
+.card-vinho h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #f1e8e3;
+    margin: 11px;
 }
 .card-chefe{
-    background-color: white;
-    height: 160px;
-    width: 190px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    height: 170px;
+    width: 200px;
+    border-radius: 10px;
+     transition: all 0.3s ease;
 }
-.card-chefe p{
-    font-size: 60px;
-    margin-top: 15px;
+.card-chefe:hover {
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.card-chefe i{
+    font-size: 50px;
+    margin-top: 25px;
+    color: #c74832;
+    
+}
+
+.card-chefe h2{
+    font-size: 22px;
+    font-weight: 600;
+    color: #f1e8e3;
+    margin: 11px;
 }
 
 .card-ambiente{
-    background-color: white;
-    height: 160px;
-    width: 190px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    height: 170px;
+    width: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-.card-ambiente p{
-    font-size: 60px;
-    margin-top: 15px;
+.card-ambiente:hover {
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
-
+.card-ambiente i{
+    font-size: 50px;
+    margin-top: 25px;
+    color: #c74832;
+}
+.card-ambiente h2{
+    font-size: 22px;
+    font-weight: 600;
+    color: #f1e8e3;
+    margin: 11px;
+}
 .btn-diferenciais{
-    margin-top: 100px;
+    text-decoration: none;
+    padding: 14px 30px;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    margin-top: 60px;
+    display: inline-block;
+    
+
 }
 .texto-venha{
     text-align: center;
@@ -345,7 +428,7 @@ footer{
     color: #fff;
     padding: 50px 20px;
     text-align: center;
-
+    padding: 20px 10px
     
 }
 .imgfooter{
