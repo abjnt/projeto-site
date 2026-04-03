@@ -60,7 +60,7 @@ header {
 
 .top-bar .nome {
     order: 2;
-    height: 40px;
+    height: 60px;
     width: auto;
     margin-left: 15px;
     object-fit: contain;
@@ -407,17 +407,15 @@ button:hover {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width:1024px) {
+
+    /* ======= HEADER ========= */
     header {
         position: fixed;
         flex-wrap: wrap;
+        padding: 15px 20px;
         padding-right: 40px;
-        padding: 15px 19px;
         height: auto;
-    }
-    .reserva{
-        width:auto;
-        
     }
 
     .top-bar .nome {
@@ -433,6 +431,21 @@ button:hover {
 
     .menu-toggle {
         display: flex;
+    }
+
+    #btn-hamburguer {
+        display: flex;
+        padding: 12px 28px;
+        color: #fff;
+        background: linear-gradient(135deg, #d32f2f, #9a0303);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
     }
 
     .nav-bar {
@@ -479,4 +492,11 @@ button:hover {
         }
     }
 
+}
+
+@media (max-width:768px){
+    .reserva{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }
