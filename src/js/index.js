@@ -6,3 +6,15 @@ menuToggle.addEventListener('click', function() {
     menuToggle.classList.toggle('ativo');
     navBar.classList.toggle('ativo');
 });
+
+// Animação de Scroll (Reveal)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('mostrar');
+        }
+    });
+});
+
+const elementosEscondidos = document.querySelectorAll('.escondido');
+elementosEscondidos.forEach((el) => observer.observe(el));
