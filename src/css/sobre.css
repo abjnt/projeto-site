@@ -263,7 +263,7 @@ header {
 }
 
 .gradiente {
-    margin-top: 90px;
+    margin-top: 180px;
     background: linear-gradient(to top, rgba(27, 19, 16, 0.9), rgba(26, 22, 16, 0.2), rgba(26, 22, 16, 0.2));
     width: 100%;
     height: 100vh;
