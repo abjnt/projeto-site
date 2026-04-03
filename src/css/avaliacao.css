@@ -271,6 +271,10 @@ main h6 {
 }
 
 
+#btn-hamburguer{
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -288,10 +292,6 @@ main h6 {
   border-radius: 2px;
 }
 
-.avaliacoes-container {
-  flex-direction: column;
-  gap: 20px;
-}
 
 @media (max-width:1024px) {
 
@@ -379,6 +379,10 @@ main h6 {
   }
 
   /* ======== CONTAINER ========== */
+
+  main{
+    margin: 100px;
+  }
 
   .avaliacoes-container {
     flex-direction: column;
