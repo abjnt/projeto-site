@@ -382,11 +382,6 @@ footer{
 .direitos p:hover{
  color: #fff;
 }
-
-/* ========================================= */
-/* ======= RESPONSIVIDADE (MOBILE & TABLET) ======= */
-/* ========================================= */
-
 @media (max-width: 1024px) {
   /* ======= HEADER ========= */
     header {
@@ -398,9 +393,9 @@ footer{
 
   .top-bar .nome {
     order: 2;
-    height: 50px; /* Reduzi um pouco para não espremer a logo */
+    height: 50px; 
     padding-right: 0;
-    margin-right: auto; /* Joga o menu para a direita */
+    margin-right: auto; 
   }
 
   .top-bar .btn-reserva {
@@ -423,7 +418,7 @@ footer{
     font-weight: 600;
     font-size: 0.85rem;
     text-transform: uppercase;
-    width: 100%; /* Botão ocupa a largura toda no menu aberto */
+    width: 100%; 
     justify-content: center;
   }
 
@@ -458,12 +453,12 @@ footer{
 
   /* ======== CONTAINER & TEXTOS ========== */
   main {
-    margin: 0; /* Remove os 100px que quebravam o layout */
-    padding: 120px 20px 40px 20px; /* Usa padding para dar respiro interno */
+    margin: 0; 
+    padding: 120px 20px 40px 20px; 
   }
 
   .avaliacoes-container {
-    flex-direction: column; /* Coloca os itens um embaixo do outro */
+    flex-direction: column; 
     gap: 10px;
     padding: 30px;
   }
@@ -477,10 +472,8 @@ footer{
     height: 1px;
     margin: 10px auto;
   }
-
-  /* ======== CARROSSEL SWIPE ========== */
   .depoimentos-wrapper {
-    margin: 20px; /* Não deixa encostar nas bordas da tela */
+    margin: 20px; 
     padding: 20px 10px;
   }
 
@@ -488,10 +481,9 @@ footer{
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory; /* Efeito magnético */
+    scroll-snap-type: x mandatory; 
   }
 
-  /* Mostra uma barra de rolagem bem fininha e elegante */
   .carrossel::-webkit-scrollbar {
     height: 4px;
     display: block;
@@ -507,19 +499,19 @@ footer{
 
   .cards {
     width: max-content;
-    animation: none; /* Desliga a animação para o usuário rolar com o dedo */
-    padding-bottom: 15px; /* Espaço para a barrinha de scroll */
+    animation: none; 
+    padding-bottom: 15px; 
   }
   .card {
     min-width: 280px;
-    scroll-snap-align: center; /* Trava o card no centro da tela ao rolar */
+    scroll-snap-align: center; 
     margin: 0 10px;
-    flex: 0 0 280px; /* Reduz um pouco o card no mobile */
+    flex: 0 0 280px; 
     padding: 20px;
   }
 }
 
-/* Telas de Celulares menores */
+
 @media (max-width: 768px) {
   main h1 {
     font-size: 32px;
@@ -534,11 +526,11 @@ footer{
   }
 
   .item h2 {
-    font-size: 36px; /* Ajusta o tamanho dos números grandes (4.9, 98%) */
+    font-size: 36px; 
   }
   
   .infos {
-    flex-direction: column; /* Organiza o rodapé */
+    flex-direction: column; 
     gap: 30px;
     text-align: center;
   }
