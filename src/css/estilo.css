@@ -150,6 +150,9 @@ header {
     text-transform: uppercase;
     position: relative;
     transition: transform .3s ease;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 
 }
 .entrace-conteudo .btn-reserva {
@@ -412,16 +415,33 @@ texto-diferenciais span{
     
 
 }
+.visitar{
+   background-color: #e8d8cf;;   
+   min-height: 80 vh;
+   padding: 80px 20px;
+    
+}
 .texto-venha{
     text-align: center;
-    margin-top: 70px;
-    font-size: 30px;
+    font-size: 40px;
+    color: #2f1d19;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+    font-weight: 700;
+   
 }
 .localizacao{
     display:flex;
     align-items: flex-start;
     gap: 60px;
     margin-top: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #2f1d19;
+    margin-bottom: 26px;
+   
 
 }
 
@@ -443,6 +463,7 @@ texto-diferenciais span{
     line-height: 1.3;
     margin-bottom: 10px;
     font-weight: 700;
+    
 }
 
 .endereco p{
