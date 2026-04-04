@@ -18,3 +18,15 @@ const observer = new IntersectionObserver((entries) => {
 
 const elementosEscondidos = document.querySelectorAll('.escondido');
 elementosEscondidos.forEach((el) => observer.observe(el));
+
+window.addEventListener('load', function() {
+    const video = document.getElementById('bg-video');
+    
+
+    video.play().catch(function(error) {
+
+        document.body.addEventListener('click', function() {
+            video.play();
+        }, { once: true }); 
+    });
+});
