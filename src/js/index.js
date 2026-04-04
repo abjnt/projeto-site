@@ -19,14 +19,16 @@ const observer = new IntersectionObserver((entries) => {
 const elementosEscondidos = document.querySelectorAll('.escondido');
 elementosEscondidos.forEach((el) => observer.observe(el));
 
-window.addEventListener('load', function() {
-    const video = document.getElementById('bg-video');
-    
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("bg-video");
+    const heroSection = document.querySelector(".page-entrace");
 
-    video.play().catch(function(error) {
+    video.play().catch(function(erro) {
+        console.log("O navegador bloqueou o autoplay. Esperando interação do usuário...");
+        
 
-        document.body.addEventListener('click', function() {
+        heroSection.addEventListener("click", function() {
             video.play();
-        }, { once: true }); 
+        }, { once: true });
     });
 });
