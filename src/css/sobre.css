@@ -281,6 +281,7 @@ header {
     font-size: 1.5rem;
     z-index: 0;
     text-align: center;
+    margin-top: 300px;
 }
 
 .in-circle {
