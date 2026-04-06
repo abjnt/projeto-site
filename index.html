@@ -15,9 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/estilo.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="icon" href="/src/assets/logo.png" type="image/png">
+   <link rel="stylesheet" href="./src/css/estilo.css">
+    <link rel="icon" href="./src/assets/logo.png" type="image/png">
+    
 
     <title>Bovinus Grill</title>
 </head>
@@ -25,18 +25,19 @@
 <body>
     <header>
         <div class="top-bar">
-            <a href="#"><img class="logo" width="100" height="100" src="../assets/logo.png" alt="logo"></a>
-            <img class="nome" width="150" height="100" src="../assets/BOVINUS.png" alt="nome">
+           
+           <img class="logo" src="./src/assets/logo.png" alt="logo">
+<img class="nome" src="./src/assets/BOVINUS.png" alt="nome">
             <button class="btn-reserva"><a href="../src/pages/reserva.html">faça a sua reserva</a></button>
         </div>
         <div class="nav-bar" id="nav-bar">
             <nav id="menu-header">
                 <ul>
-                    <li><a href="#">inicio</a></li>
-                    <li><a href="./cardapio.html">cardápio</a></li>
-                    <li><a href="./avaliacao.html">avaliação</a></li>
-                    <li><a href="./reserva.html">reservas</a></li>
-                    <li><a href="./sobre.html">nossa história</a></li>
+                    <li><a href="./index.html">inicio</a></li>
+                    <li><a href="./src/pages/cardapio.html">cardápio</a></li>
+                    <li><a href="./src/pages/avaliacao.html">avaliação</a></li>
+                    <li><a href="./src/pages/reserva.html">reservas</a></li>
+                    <li><a href="./src/pages/sobre.html">nossa história</a></li>
                     <li><button id="btn-hamburguer"><a href="./reserva.html">faça a sua reserva</a></button></li>
                 </ul>
             </nav>
@@ -48,67 +49,67 @@
         </div>
     </header>
     <section class="page-entrace">
-        <video autoplay loop muted src="../assets/video.mp4" alt="video" id="bg-video"></video>
+    <video id="bg-video" autoplay loop muted playsinline poster="./src/assets/video-bg-estatico.jpg" src="./src/assets/video.mp4"></video>
         <div class="entrace-conteudo">
             <h2 id="tagline">o auge do churrasco</h2>
             <a href="reserva.html">
-                <button class="btn-reserva">faça a sua reserva</button>
+                <a href="./src/pages/reserva.html" class="btn-reserva btn-diferenciais">Faça sua reserva</a>
             </a>
         </div>
     </section>
 
     <section class="quem-somos">
-        <div class="descubra">
+        <div class="descubra escondido">
             <h1>DESCUBRA <br>
                 QUEM SOMOS</h1>
             <p>Nossa história nasce da paixão pelo verdadeiro <strong>churrasco</strong>.
                 Com anos de experiência, selecionamos os melhores cortes
                 e aperfeiçoamos cada preparo com excelência.</p>
-            <button class="btn-reserva"><a href="/src/pages/sobre.html">Sobre nós</a></button>
+            <button class="btn-reserva"><a href="./src/pages/sobre.html">Sobre nós</a></button>
         </div>
 
-        <div class="chefeimg">
-            <img src="../assets/chefe.jpeg" alt="chefe">
+        <div class="chefeimg escondido">
+           <img src="./src/assets/chefe.jpeg" alt="chefe">
         </div>
     </section>
 
 
     <section class="diferenciais">
-        <div class="texto-diferenciais">
+        <div class="texto-diferenciais escondido">
             <h1>Nossos <br><span>DIFERÊNCIAIS</span>
             </h1>
         </div>
 
         <div class="cards">
-            <div class="card-carne">
+            <div class="card-carne escondido">
                 <i class="fa-etch fa-solid fa-fire"></i>
                 <h2> Carne 100% <br>
                     selecionada</h2>
             </div>
-            <div class="card-vinho">
+            <div class="card-vinho escondido">
                 <i class="fa-solid fa-wine-glass"></i>
                 <h2> Cartas de vinhos exclusivas</h2>
             </div>
-            <div class="card-chefe">
+            <div class="card-chefe escondido">
                 <i class="fa-solid fa-utensils"></i>
                 <h2>Chefe <br>
                     epecializado </h2>
             </div>
 
-            <div class="card-ambiente">
+            <div class="card-ambiente escondido">
                 <i class="fa-solid fa-people-arrows"></i>
                 <h2>Ambiente <br>
                     especializado</h2>
             </div>
         </div>
 
-        <a href="/src/pages/reserva.html" class="btn-reserva btn-diferenciais">Faça sua reserva</a>
+        <a href="./src/pages/reserva.html" class="btn-reserva btn-diferenciais">Faça sua reserva</a>
 
 
     </section>
 
     <section class="visitar">
-        <div class="texto-venha">
+        <div class="texto-venha escondido">
             <h1>Venha nos visitar</h1>
         </div>
 
@@ -141,7 +142,7 @@
 
     <footer>
         <div class="imgfooter">
-            <img src="../assets/logo.png" alt="">
+            <img src="./src/assets/logo.png" alt="">
         </div>
         <div class="infos">
             <div class="sobre">
@@ -183,7 +184,7 @@
         </div>
 
     </footer>
-    <script src="/src/js/index.js"></script>
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>

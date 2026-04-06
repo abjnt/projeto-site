@@ -150,6 +150,9 @@ header {
     text-transform: uppercase;
     position: relative;
     transition: transform .3s ease;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 
 }
 .entrace-conteudo .btn-reserva {
@@ -235,9 +238,12 @@ header {
     justify-content: center;
     align-items: center;
     height: 100%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-
+.chefeimg:hover{
+    transform: translateY(-10px);
+}
 .chefeimg img{
 
     width: 600px;
@@ -295,6 +301,7 @@ texto-diferenciais span{
   justify-content: center;
   gap: 30px;
   margin-top: 30px;
+
   
 }
 .cards p {
@@ -308,9 +315,11 @@ texto-diferenciais span{
     height: 170px;
     width: 200px;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
 }
 .card-carne:hover {
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.10);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
@@ -331,10 +340,11 @@ texto-diferenciais span{
     height: 170px;
     width: 200px;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 }
 .card-vinho:hover {
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.10);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
@@ -356,9 +366,11 @@ texto-diferenciais span{
     height: 170px;
     width: 200px;
     border-radius: 10px;
-     transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 .card-chefe:hover {
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.10);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
@@ -382,9 +394,10 @@ texto-diferenciais span{
     height: 170px;
     width: 200px;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card-ambiente:hover {
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.10);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
@@ -412,16 +425,33 @@ texto-diferenciais span{
     
 
 }
+.visitar{
+   background-color: #e8d8cf;;   
+   min-height: 80 vh;
+   padding: 80px 20px;
+    
+}
 .texto-venha{
     text-align: center;
-    margin-top: 70px;
-    font-size: 30px;
+    font-size: 40px;
+    color: #2f1d19;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+    font-weight: 700;
+   
 }
 .localizacao{
     display:flex;
     align-items: flex-start;
     gap: 60px;
     margin-top: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #2f1d19;
+    margin-bottom: 26px;
+   
 
 }
 
@@ -443,6 +473,7 @@ texto-diferenciais span{
     line-height: 1.3;
     margin-bottom: 10px;
     font-weight: 700;
+    
 }
 
 .endereco p{
@@ -539,33 +570,50 @@ footer{
     transition: all 0.3s ease;
     border-radius: 2px;
 }
+/* Classes para a animação de scroll */
+.escondido {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-@media (max-width:1024px) {
-    /* ======= HEADER ========= */
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adicione um atraso para os cards aparecerem um por um */
+.cards .escondido:nth-child(1) { transition-delay: 0.1s; }
+.cards .escondido:nth-child(2) { transition-delay: 0.2s; }
+.cards .escondido:nth-child(3) { transition-delay: 0.3s; }
+.cards .escondido:nth-child(4) { transition-delay: 0.4s; }
+
+
+
+@media (max-width: 1024px) {
+    /* HEADER E MENU */
     header {
         position: fixed; 
         flex-wrap: wrap; 
         padding: 15px 20px;
-        padding-right: 40px;
         height: auto;
     }
-
+    
     .top-bar .nome {
         order: 2;
-        height: 60px;
-        width: auto;
-        padding-right: 80px;
+        height: 50px;
+        margin-right: auto; /* Empurra o menu hambúrguer para a direita */
     }
-
+    
     .top-bar .btn-reserva {
-        display: none; 
+        display: none; /* Esconde o botão do topo, vai pro menu */
     }
-
+    
     .menu-toggle {
         display: flex;
     }
-
-    #btn-hamburguer{
+    
+    #btn-hamburguer {
         display: flex;
         padding: 12px 28px;
         color: #fff;
@@ -576,10 +624,10 @@ footer{
         font-weight: 600;
         font-size: 0.85rem;
         text-transform: uppercase;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
+        width: 100%;
+        justify-content: center;
     }
-
+    
     .nav-bar {
         display: none; 
         width: 100%;
@@ -587,191 +635,139 @@ footer{
         padding-top: 20px;
         padding-bottom: 10px;
     }
-
+    
     .nav-bar.ativo {
         display: flex;
         animation: descerMenu 0.3s ease;
     }
-
+    
     #menu-header ul {
         flex-direction: column; 
         width: 100%;
         text-align: center;
         gap: 20px;
     }
-
-    .menu-toggle.ativo span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+    
+    .menu-toggle.ativo span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.ativo span:nth-child(2) { opacity: 0; }
+    .menu-toggle.ativo span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    
+    /* SEÇÃO QUEM SOMOS */
+    .quem-somos {
+        grid-template-columns: 1fr; /* Quebra para 1 coluna */
+        height: auto;
+        padding: 40px 20px;
     }
-    .menu-toggle.ativo span:nth-child(2) {
-        opacity: 0;
+    
+    .descubra {
+        padding: 20px 0;
     }
-    .menu-toggle.ativo span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+    
+    .descubra h1 {
+        font-size: 50px;
+    }
+    
+    .chefeimg {
+        margin-top: 20px;
+        height: auto;
     }
 
-    @keyframes descerMenu {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    /* Trava o tamanho da imagem para não quebrar a tela */
+    .chefeimg img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
     }
 
-    /* HERO */
-  .page-entrace {
-    width: 100%;
-  }
+    /* SEÇÃO DIFERENCIAIS */
+    .cards {
+        flex-wrap: wrap;
+    }
 
-  .entrace-conteudo h2 {
-    font-size: 2.5rem;
-  }
+    /* SEÇÃO VISITAR (MAPA) */
+    .localizacao {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
 
-  /* QUEM SOMOS */
-  .quem-somos {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
+    .mapa {
+        padding: 20px 0;
+        width: 100%;
+    }
 
-  .descubra {
-    padding: 20px 30px;
-  }
 
-  .descubra h1 {
-    font-size: 45px;
-  }
+    .mapa iframe {
+        width: 100% !important;
+        max-width: 600px;
+    }
 
-  .descubra h3 {
-    font-size: 26px;
-  }
-
-  .chefeimg {
-    min-width: 100%;
-    margin-top: 60px;
-    height: 500px;
-  }
-
-  /* CARDS */
-  .diferenciais{
-    min-height: fit-content;
-  }
-
-  .texto-diferenciais{
-    padding: 10px;
-  }
-
-  .cards {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .btn-diferenciais{
-    margin-bottom: 50px;
-  }
-
-  /* LOCALIZAÇÃO */
-  .localizacao {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .endereco {
-    margin-top: 20px;
-  }
-
-  .endereco h2 {
-    font-size: 32px;
-  }
-
-  .endereco p {
-    font-size: 22px;
-  }
+    .endereco {
+        margin-top: 0;
+    }
 }
+
 
 @media (max-width: 768px) {
+    /* HERO SECTION (Video) */
+    .entrace-conteudo {
+        top: auto; /* Remove o top fixo */
+        padding: 0 20px;
+    }
     
-    /* HERO */
-  .entrace-conteudo {
-    top: 140px;
-    padding: 0 20px;
-  }
+    .entrace-conteudo h2 {
+        font-size: 2.2rem;
+    }
 
-  .entrace-conteudo h2 {
-    font-size: 2rem;
-  }
+    /* DIFERENCIAIS */
+    .texto-diferenciais {
+        font-size: 25px;
+    }
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card-carne, .card-vinho, .card-chefe, .card-ambiente {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        padding: 20px;
+    }
 
-  /* DIFERENCIAIS */
-  .texto-diferenciais {
-    font-size: 22px;
-  }
+    /* ENDEREÇO E RODAPÉ */
+    .endereco h2 {
+        font-size: 28px;
+    }
+    
+    .endereco p {
+        font-size: 20px;
+    }
 
-  .cards {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .cards div {
-    width: 80%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .cards p {
-    font-size: 20px;
-  }
-
-  .card-carne p,
-  .card-vinho p,
-  .card-chefe p,
-  .card-ambiente p {
-    font-size: 40px;
-  }
-
-  /* MAPA */
-  .mapa iframe {
-    width: 100%;
-    height: 300px;
-  }
-
-  /* FOOTER */
-  .infos {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
+    .infos {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
 }
 
-@media (max-width: 480px){
 
-     /* BOTÃO */
-  .btn-reserva {
-    font-size: 1.1rem;
-    padding: 8px 16px;
-  }
-
-  .btn-diferenciais{
-    font-size: 1.3rem;
-    padding: 8px 16px;
-  }
-
-  /* TEXTO DESCUBRA */
-  .descubra h1{
-    font-size: 2.2rem;
-  }
-  .descubra h3{
-    font-size: 1.4rem;
-  }
-
-  /* ENDEREÇO */
-  .endereco h2 {
-    font-size: 24px;
-  }
-
-  .endereco p {
-    font-size: 18px;
-  }
-
-  /* FOOTER */
-  .infos p {
-    font-size: 14px;
-  }
+@media (max-width: 480px) {
+    .btn-reserva {
+        font-size: 1rem;
+    }
+    
+    .descubra h1 {
+        font-size: 38px;
+    }
+    
+    .descubra p {
+        font-size: 18px;
+    }
+    
+    .endereco h2 {
+        font-size: 24px;
+    }
 }
