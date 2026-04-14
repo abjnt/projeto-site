@@ -32,109 +32,112 @@
         </div>
     </header>
 
-    <section class="reserva">
+    <main class="do-reserva">
+        <form class="reserva">
+
         <h2>Faça sua Reserva</h2>
         <!-- DATA -->
-        <div class="datas-container">
+        <section class="datas-container">
             <div class="datas">
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Sex</span>
                     <span class="numero">27</span>
                     <span class="mes">Mar</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Sáb</span>
                     <span class="numero">28</span>
                     <span class="mes">Mar</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Dom</span>
                     <span class="numero">29</span>
                     <span class="mes">Mar</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Seg</span>
                     <span class="numero">30</span>
                     <span class="mes">Mar</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Ter</span>
                     <span class="numero">31</span>
                     <span class="mes">Mar</span>
                 </button>
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Qua</span>
                     <span class="numero">01</span>
                     <span class="mes">Abr</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Qui</span>
                     <span class="numero">02</span>
                     <span class="mes">Abr</span>
                 </button>
 
-                <button class="data-btn">
+                <button type="button" class="data-btn">
                     <span class="dia">Sex</span>
                     <span class="numero">03</span>
                     <span class="mes">Abr</span>
                 </button>
             </div>
-        </div>
+        </section>
         <!-- BARRA -->
         <div class="scroll-bar">
             <div class="scroll-progress"></div>
         </div>
         <!-- PESSOAS -->
-        <div class="bloco">
+        <section class="bloco">
             <h3>Quantidade de Pessoas</h3>
             <div class="pessoas">
-                <button class="pessoas-btn">1</button>
-                <button class="pessoas-btn">2</button>
-                <button class="pessoas-btn">3</button>
-                <button class="pessoas-btn">4</button>
-                <button class="pessoas-btn">5</button>
-                <button class="pessoas-btn">6</button>
-                <button class="pessoas-btn">7+</button>
+                <button type="button" class="pessoas-btn">1</button>
+                <button type="button" class="pessoas-btn">2</button>
+                <button type="button" class="pessoas-btn">3</button>
+                <button type="button" class="pessoas-btn">4</button>
+                <button type="button" class="pessoas-btn">5</button>
+                <button type="button" class="pessoas-btn">6</button>
+                <button type="button" class="pessoas-btn">7+</button>
             </div>
-        </div>
+        </section>
         <!-- HORÁRIO -->
-        <div class="bloco">
+        <section class="bloco">
             <h3>Selecione um horário</h3>
             <div class="horarios">
-                <button class="hora-btn">12:00</button>
-                <button class="hora-btn">12:30</button>
-                <button class="hora-btn">13:00</button>
-                <button class="hora-btn">13:30</button>
-                <button class="hora-btn">14:00</button>
+                <button type="button" class="hora-btn">12:00</button>
+                <button type="button" class="hora-btn">12:30</button>
+                <button type="button" class="hora-btn">13:00</button>
+                <button type="button" class="hora-btn">13:30</button>
+                <button type="button" class="hora-btn">14:00</button>
             </div>
-        </div>
+        </section>
         <!-- AMBIENTE -->
-        <div class="bloco">
+        <section class="bloco">
             <h3>Selecione o ambiente</h3>
             <div class="ambientes">
-                <button class="ambiente-btn">Interno</button>
-                <button class="ambiente-btn">Externo</button>
-                <button class="ambiente-btn">Varanda</button>
+                <button type="button" class="ambiente-btn">Interno</button>
+                <button type="button" class="ambiente-btn">Externo</button>
+                <button type="button" class="ambiente-btn">Varanda</button>
             </div>
-        </div>
+        </section>
         <!--  DADOS -->
-        <div class="bloco">
+        <section class="bloco">
             <h3>Dados da Reserva</h3>
             <input type="text" id="nome" placeholder="Nome completo" required>
             <input type="email" id="email" placeholder="E-mail" required>
             <input type="tel" id="telefone" placeholder="Telefone / WhatsApp" required>
-        </div>
+        </section>
         <!-- BOTÃO -->
         <button id="btnReservar" class="btn-reservar">
             Reservar Mesa 🔥
         </button>
-    </section>
+        </form>
+    </main>
     <script src="../js/reserva.js"></script>
     
 </body>

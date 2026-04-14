@@ -160,7 +160,7 @@ btnReservar.addEventListener("click", () => {
         return;
     }
 
-    // 🔥 feedback visual
+    //  feedback visual
     btnReservar.innerText = "Reserva feita ✅";
     btnReservar.classList.add("sucesso");
     btnReservar.disabled = true;
