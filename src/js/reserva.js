@@ -6,114 +6,182 @@ const btnReservar = document.getElementById("btnReservar");
 
 let isDragging = false;
 
-const diasSemana = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
-const meses = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+
+// =============================
+// GERAR DATAS AUTOMÁTICAS
+// =============================
+const diasSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 function gerarDatas(qtd = 14) {
     datasDiv.innerHTML = "";
+
     const hoje = new Date();
 
     for (let i = 0; i < qtd; i++) {
-        const d = new Date();
-        d.setDate(hoje.getDate() + i);
+        const data = new Date();
+        data.setDate(hoje.getDate() + i);
 
-        datasDiv.innerHTML += `
-            <button class="data-btn">
-                <span class="dia">${diasSemana[d.getDay()]}</span>
-                <span class="numero">${d.getDate()}</span>
-                <span class="mes">${meses[d.getMonth()]}</span>
-            </button>
+        const dia = diasSemana[data.getDay()];
+        const numero = data.getDate();
+        const mes = meses[data.getMonth()];
+
+        const btn = document.createElement("button");
+        btn.classList.add("data-btn");
+
+        btn.innerHTML = `
+            <span class="dia">${dia}</span>
+            <span class="numero">${numero}</span>
+            <span class="mes">${mes}</span>
         `;
+
+        datasDiv.appendChild(btn);
     }
 }
 
 gerarDatas();
 
-[".data-btn",".pessoas-btn",".hora-btn",".ambiente-btn"].forEach(sel => {
-    document.addEventListener("click", e => {
-        const el = e.target.closest(sel);
-        if (!el) return;
 
-        document.querySelectorAll(sel).forEach(b => b.classList.remove("ativo"));
-        el.classList.add("ativo");
+// =============================
+// SELEÇÃO (ATIVO)
+// =============================
+function ativarSelecao(selector) {
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(selector)) return;
+
+        const grupo = document.querySelectorAll(selector);
+        grupo.forEach(btn => btn.classList.remove("ativo"));
+
+        e.target.closest(selector).classList.add("ativo");
+
         salvarDados();
     });
-});
+}
 
+ativarSelecao(".data-btn");
+ativarSelecao(".pessoas-btn");
+ativarSelecao(".hora-btn");
+ativarSelecao(".ambiente-btn");
+
+
+// =============================
+// SCROLL SNAP
+// =============================
 container.style.scrollSnapType = "x mandatory";
-document.querySelectorAll(".data-btn").forEach(b => b.style.scrollSnapAlign = "center");
 
+function aplicarSnap() {
+    document.querySelectorAll(".data-btn").forEach(btn => {
+        btn.style.scrollSnapAlign = "center";
+    });
+}
+
+aplicarSnap();
+
+
+// =============================
+// ATUALIZA BARRA
+// =============================
 function updateBar() {
-    const max = container.scrollWidth - container.clientWidth;
-    if (max <= 0) return;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
 
-    const w = (container.clientWidth / container.scrollWidth) * 100;
-    const p = container.scrollLeft / max;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
 
-    progress.style.width = w + "%";
-    progress.style.left = p * (100 - w) + "%";
+    const widthPercent = (clientWidth / scrollWidth) * 100;
+    progress.style.width = widthPercent + "%";
+
+    const percent = container.scrollLeft / maxScroll;
+    progress.style.left = percent * (100 - widthPercent) + "%";
 }
 
 container.addEventListener("scroll", updateBar);
 window.addEventListener("resize", updateBar);
 
-bar.addEventListener("mousedown", () => isDragging = true);
-document.addEventListener("mouseup", () => isDragging = false);
 
-document.addEventListener("mousemove", e => {
+// =============================
+// DRAG NA BARRA
+// =============================
+bar.addEventListener("mousedown", (e) => {
+    isDragging = true;
+
+    const rect = bar.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+
+    container.scrollLeft = percent * (container.scrollWidth - container.clientWidth);
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+});
+
+document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
 
     const rect = bar.getBoundingClientRect();
-    let p = (e.clientX - rect.left) / rect.width;
-    p = Math.max(0, Math.min(1, p));
+    let percent = (e.clientX - rect.left) / rect.width;
 
-    container.scrollLeft = p * (container.scrollWidth - container.clientWidth);
+    percent = Math.max(0, Math.min(1, percent));
+
+    container.scrollLeft = percent * (container.scrollWidth - container.clientWidth);
 });
 
-function pegarAtivo(sel) {
-    return document.querySelector(sel)?.innerText;
-}
 
+// =============================
+// SALVAR DADOS
+// =============================
 function salvarDados() {
     const dados = {
-        data: pegarAtivo(".data-btn.ativo"),
-        pessoas: pegarAtivo(".pessoas-btn.ativo"),
-        hora: pegarAtivo(".hora-btn.ativo"),
-        ambiente: pegarAtivo(".ambiente-btn.ativo")
+        data: document.querySelector(".data-btn.ativo")?.innerText,
+        pessoas: document.querySelector(".pessoas-btn.ativo")?.innerText,
+        hora: document.querySelector(".hora-btn.ativo")?.innerText,
+        ambiente: document.querySelector(".ambiente-btn.ativo")?.innerText
     };
 
     localStorage.setItem("reserva", JSON.stringify(dados));
-    return dados;
 }
 
+
+// =============================
+// BOTÃO RESERVAR (SEM POPUP)
+// =============================
 btnReservar.addEventListener("click", () => {
+
     const nome = document.getElementById("nome").value;
     const telefone = document.getElementById("telefone").value;
 
-    const dados = salvarDados();
+    const data = document.querySelector(".data-btn.ativo")?.innerText;
+    const pessoas = document.querySelector(".pessoas-btn.ativo")?.innerText;
+    const hora = document.querySelector(".hora-btn.ativo")?.innerText;
+    const ambiente = document.querySelector(".ambiente-btn.ativo")?.innerText;
 
-    if (!nome || !telefone || Object.values(dados).some(v => !v)) {
+    if (!nome || !telefone || !data || !pessoas || !hora || !ambiente) {
         alert("Preencha tudo!");
         return;
     }
 
-
-    //  feedback visual
+    // 🔥 feedback visual
     btnReservar.innerText = "Reserva feita ✅";
-
     btnReservar.classList.add("sucesso");
     btnReservar.disabled = true;
 
+    // volta ao normal depois
     setTimeout(() => {
-        btnReservar.innerText = "Reservar Mesa";
+        btnReservar.innerText = "Reservar Mesa 🔥";
         btnReservar.classList.remove("sucesso");
         btnReservar.disabled = false;
     }, 3000);
 });
 
-document.getElementById("menu-toggle").onclick = () => {
-    document.getElementById("menu-toggle").classList.toggle("active");
-    document.getElementById("nav-bar").classList.toggle("active");
-};
+
+const menuToggle = document.getElementById('menu-toggle');
+const navBar = document.getElementById('nav-bar');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navBar.classList.toggle('active');
+});
+
+
 
 updateBar();
