@@ -7,9 +7,7 @@ const btnReservar = document.getElementById("btnReservar");
 let isDragging = false;
 
 
-// =============================
-// GERAR DATAS AUTOMÁTICAS
-// =============================
+
 const diasSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
@@ -42,9 +40,7 @@ function gerarDatas(qtd = 14) {
 gerarDatas();
 
 
-// =============================
-// SELEÇÃO (ATIVO)
-// =============================
+
 function ativarSelecao(selector) {
     document.addEventListener("click", (e) => {
         if (!e.target.closest(selector)) return;
@@ -64,9 +60,7 @@ ativarSelecao(".hora-btn");
 ativarSelecao(".ambiente-btn");
 
 
-// =============================
-// SCROLL SNAP
-// =============================
+
 container.style.scrollSnapType = "x mandatory";
 
 function aplicarSnap() {
@@ -78,9 +72,6 @@ function aplicarSnap() {
 aplicarSnap();
 
 
-// =============================
-// ATUALIZA BARRA
-// =============================
 function updateBar() {
     const scrollWidth = container.scrollWidth;
     const clientWidth = container.clientWidth;
@@ -99,9 +90,7 @@ container.addEventListener("scroll", updateBar);
 window.addEventListener("resize", updateBar);
 
 
-// =============================
-// DRAG NA BARRA
-// =============================
+
 bar.addEventListener("mousedown", (e) => {
     isDragging = true;
 
@@ -127,9 +116,7 @@ document.addEventListener("mousemove", (e) => {
 });
 
 
-// =============================
-// SALVAR DADOS
-// =============================
+
 function salvarDados() {
     const dados = {
         data: document.querySelector(".data-btn.ativo")?.innerText,
@@ -142,9 +129,6 @@ function salvarDados() {
 }
 
 
-// =============================
-// BOTÃO RESERVAR (SEM POPUP)
-// =============================
 btnReservar.addEventListener("click", () => {
 
     const nome = document.getElementById("nome").value;
@@ -160,14 +144,13 @@ btnReservar.addEventListener("click", () => {
         return;
     }
 
-    // 🔥 feedback visual
-    btnReservar.innerText = "Reserva feita ✅";
+    btnReservar.innerText = "Reserva feita ";
     btnReservar.classList.add("sucesso");
     btnReservar.disabled = true;
 
-    // volta ao normal depois
+
     setTimeout(() => {
-        btnReservar.innerText = "Reservar Mesa 🔥";
+        btnReservar.innerText = "Reservar Mesa ";
         btnReservar.classList.remove("sucesso");
         btnReservar.disabled = false;
     }, 3000);
