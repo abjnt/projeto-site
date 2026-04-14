@@ -479,7 +479,77 @@ a {
     border-radius: 2px;
 }
 
+footer{
+    background-color: #1c1714;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    padding: 20px 10px
+    
+}
+.imgfooter{
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.imgfooter img{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    object-fit: contain;
+}
 
+.infos {
+    display: flex;
+    justify-content: center;
+    gap: 90px; /* espaço entre colunas */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    flex-wrap: wrap;
+}
+.infos h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+
+.infos p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    cursor: pointer;
+}
+
+.infos p:hover {
+    color: #fff;
+}
+.icons{
+    margin-top: 35px;
+    font-size: 20px;
+    color: #c6aa76;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.direitos{
+    margin-top: 10px;
+    padding-top: 20px;
+    text-align: center;
+    
+}
+.direitos p{
+    margin: 15px 0;
+    cursor: pointer;
+    color: #d1d1d1;
+}
+.direitos p:hover{
+ color: #fff;
+}
 @media (max-width:1024px) {
 
     /* ======= HEADER ========= */
@@ -637,6 +707,11 @@ a {
     .seta {
         font-size: 30px;
     }
+    .infos {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px){
