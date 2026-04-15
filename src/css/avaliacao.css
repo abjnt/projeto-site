@@ -385,62 +385,62 @@ footer{
 @media (max-width: 1024px) {
   /* ======= HEADER ========= */
     header {
-      position: fixed;
-      flex-wrap: wrap;
-      padding: 15px 20px;
-      height: auto;
+        position: fixed;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        padding-right: 40px;
+        height: auto;
     }
 
-  .top-bar .nome {
-    order: 2;
-    height: 50px; 
-    padding-right: 0;
-    margin-right: auto; 
-  }
+    .top-bar .nome {
+        order: 2;
+        height: 60px;
+        width: auto;
+        padding-right: 80px;
+    }
 
-  .top-bar .btn-reserva {
-    display: none;
-  }
+    .top-bar .btn-reserva {
+        display: none;
+    }
 
-  .menu-toggle {
-    display: flex;
-    margin-left: 20px;
-  }
+    .menu-toggle {
+        display: flex;
+    }
 
-  #btn-hamburguer {
-    display: flex;
-    padding: 12px 28px;
-    color: #fff;
-    background: linear-gradient(135deg, #d32f2f, #9a0303);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    width: 100%; 
-    justify-content: center;
-  }
+    #btn-hamburguer {
+        display: flex;
+        padding: 12px 28px;
+        color: #fff;
+        background: linear-gradient(135deg, #d32f2f, #9a0303);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
+    }
 
-  .nav-bar {
-    display: none;
-    width: 100%;
-    order: 6;
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
+    .nav-bar {
+        display: none;
+        width: 100%;
+        order: 6;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
 
-  .nav-bar.ativo {
-    display: flex;
-    animation: descerMenu 0.3s ease;
-  }
+    .nav-bar.ativo {
+        display: flex;
+        animation: descerMenu 0.3s ease;
+    }
 
-  #menu-header ul {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: 20px;
-  }
+    #menu-header ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+    }
 
   .menu-toggle.ativo span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
   .menu-toggle.ativo span:nth-child(2) { opacity: 0; }

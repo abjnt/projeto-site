@@ -593,26 +593,28 @@ footer{
 @media (max-width: 1024px) {
     /* HEADER E MENU */
     header {
-        position: fixed; 
-        flex-wrap: wrap; 
+        position: fixed;
+        flex-wrap: wrap;
         padding: 15px 20px;
+        padding-right: 40px;
         height: auto;
     }
-    
+
     .top-bar .nome {
         order: 2;
-        height: 50px;
-        margin-right: auto; /* Empurra o menu hambúrguer para a direita */
+        height: 60px;
+        width: auto;
+        padding-right: 80px;
     }
-    
+
     .top-bar .btn-reserva {
-        display: none; /* Esconde o botão do topo, vai pro menu */
+        display: none;
     }
-    
+
     .menu-toggle {
         display: flex;
     }
-    
+
     #btn-hamburguer {
         display: flex;
         padding: 12px 28px;
@@ -624,30 +626,30 @@ footer{
         font-weight: 600;
         font-size: 0.85rem;
         text-transform: uppercase;
-        width: 100%;
-        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(154, 3, 3, 0.3);
     }
-    
+
     .nav-bar {
-        display: none; 
+        display: none;
         width: 100%;
-        order: 6; 
+        order: 6;
         padding-top: 20px;
         padding-bottom: 10px;
     }
-    
+
     .nav-bar.ativo {
         display: flex;
         animation: descerMenu 0.3s ease;
     }
-    
+
     #menu-header ul {
-        flex-direction: column; 
+        flex-direction: column;
         width: 100%;
         text-align: center;
         gap: 20px;
     }
-    
+
     .menu-toggle.ativo span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .menu-toggle.ativo span:nth-child(2) { opacity: 0; }
     .menu-toggle.ativo span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
