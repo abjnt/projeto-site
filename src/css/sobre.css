@@ -278,7 +278,7 @@ header {
     justify-content: center;
     align-items: center;
     font-family: 'PT Serif', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     z-index: 0;
     text-align: center;
     margin-top: 300px;
@@ -298,10 +298,10 @@ header {
 }
 
 .text {
-    bottom: 30px;
+    bottom: 10px;
     text-align: center;
     font-family: 'PT Serif', serif;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: #b8a69b;
     margin: 0 8vw;
@@ -418,7 +418,8 @@ header {
     }
 
     .text {
-        font-size: 1.4rem;
+        bottom: 15px;
+        font-size: 1.1rem;
     }
 
     .circle {
@@ -427,7 +428,6 @@ header {
     }
 
     .circle.active {
-        transform: scale(1.1);
         font-size: .9rem;
     }
 
@@ -438,20 +438,16 @@ header {
     /* ======== DATAS ========== */
 
     .date-time {
-        width: 18%;
-        height: 24%;
+        width: 28%;
+        height: 20%;
         font-size: 1.1rem;
     }
 
     .text {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     /* ========== CIRCULOS =========== */
-
-    .line {
-        width: 2px;
-    }
 
     /* Bolinhas */
     .circle {
@@ -460,7 +456,6 @@ header {
     }
 
     .circle.active {
-        transform: scale(1);
         font-size: .7rem;
     }
 
@@ -482,22 +477,16 @@ header {
     /* ======== DATAS ========== */
 
     .date-time {
-        width: 24%;
-        height: 22%;
+        width: 28%;
+        height: 20%;
         font-size: .9rem;
     }
 
-    .text {
-        font-size: 1.1rem;
-    }
-
-    .circle {
-        width: 12px;
-        height: 12px;
+    .text p{
+        font-size: .8rem;
     }
 
     .circle.active {
-        transform: scale(.8);
         font-size: .6rem;
     }
 }
